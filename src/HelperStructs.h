@@ -44,6 +44,7 @@ struct XYTL : XY
 	XYTL() = default;
 	XYTL(uint8_t x, uint8_t y, uint16_t t, uint16_t l) : XY(x, y) { this->t = t; this->l = l; }
 	uint16_t t;
+	//should be int and add to the Game uint16_t shift
 	uint16_t l;
 	void Print();
 	bool operator==(XYTL& r_value);

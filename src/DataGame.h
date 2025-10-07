@@ -43,7 +43,8 @@ struct BorderBoard {
 struct GameState;
 struct XYTL;
 
-struct GameState { //kinda state of the game
+//kinda state of the game
+struct GameState { 
 	BorderGame WhiteTimelinesBorder;
 	BorderGame BlackTimelinesBorder;
 
