@@ -1,7 +1,7 @@
 CMakeFiles/ModdableChess5D.dir/src/Piece.cpp.o: \
  /home/candy/projects/moddablechess5d/moddablechess5d/src/Piece.cpp \
  /usr/include/stdc-predef.h \
- /home/candy/projects/moddablechess5d/moddablechess5d/src/Piece.h \
+ /home/candy/projects/moddablechess5d/moddablechess5d/include/Piece.h \
  /usr/include/c++/13/bitset /usr/include/c++/13/bits/functexcept.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -136,7 +136,7 @@ CMakeFiles/ModdableChess5D.dir/src/Piece.cpp.o: \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
- /home/candy/projects/moddablechess5d/moddablechess5d/src/HelperStructs.h \
+ /home/candy/projects/moddablechess5d/moddablechess5d/include/HelperStructs.h \
  /usr/include/c++/13/list /usr/include/c++/13/bits/stl_list.h \
  /usr/include/c++/13/bits/allocated_ptr.h \
  /usr/include/c++/13/bits/list.tcc /usr/include/c++/13/algorithm \
@@ -181,13 +181,13 @@ CMakeFiles/ModdableChess5D.dir/src/Piece.cpp.o: \
  /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
  /usr/include/c++/13/bits/fstream.tcc \
- /home/candy/projects/moddablechess5d/moddablechess5d/src/Game.h \
+ /home/candy/projects/moddablechess5d/moddablechess5d/include/Game.h \
  /usr/include/c++/13/map /usr/include/c++/13/bits/stl_tree.h \
  /usr/include/c++/13/bits/stl_map.h \
  /usr/include/c++/13/bits/stl_multimap.h /usr/include/c++/13/utility \
  /usr/include/c++/13/bits/stl_relops.h /usr/include/c++/13/variant \
  /usr/include/c++/13/bits/parse_numbers.h \
- /home/candy/projects/moddablechess5d/moddablechess5d/src/usingnames.h \
- /home/candy/projects/moddablechess5d/moddablechess5d/src/DataGame.h \
+ /home/candy/projects/moddablechess5d/moddablechess5d/include/usingnames.h \
+ /home/candy/projects/moddablechess5d/moddablechess5d/include/DataGame.h \
  /usr/include/c++/13/iostream \
- /home/candy/projects/moddablechess5d/moddablechess5d/src/ScrollableGame.h
+ /home/candy/projects/moddablechess5d/moddablechess5d/include/ScrollableGame.h

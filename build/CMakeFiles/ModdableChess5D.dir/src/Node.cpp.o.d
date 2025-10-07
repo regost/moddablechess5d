@@ -156,7 +156,7 @@ CMakeFiles/ModdableChess5D.dir/src/Node.cpp.o: \
  /usr/include/c++/13/bits/basic_ios.tcc \
  /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/istream \
  /usr/include/c++/13/bits/istream.tcc \
- /home/candy/projects/moddablechess5d/moddablechess5d/src/HelperStructs.h \
+ /home/candy/projects/moddablechess5d/moddablechess5d/include/HelperStructs.h \
  /usr/include/c++/13/list /usr/include/c++/13/bits/stl_list.h \
  /usr/include/c++/13/bits/allocated_ptr.h \
  /usr/include/c++/13/ext/aligned_buffer.h \
@@ -175,7 +175,7 @@ CMakeFiles/ModdableChess5D.dir/src/Node.cpp.o: \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
- /home/candy/projects/moddablechess5d/moddablechess5d/src/Piece.h \
+ /home/candy/projects/moddablechess5d/moddablechess5d/include/Piece.h \
  /usr/include/c++/13/bitset /usr/include/c++/13/functional \
  /usr/include/c++/13/bits/std_function.h \
  /usr/include/c++/13/unordered_map \
@@ -186,13 +186,13 @@ CMakeFiles/ModdableChess5D.dir/src/Node.cpp.o: \
  /usr/include/c++/13/bits/node_handle.h \
  /usr/include/c++/13/bits/erase_if.h /usr/include/c++/13/array \
  /usr/include/c++/13/compare \
- /home/candy/projects/moddablechess5d/moddablechess5d/src/Game.h \
+ /home/candy/projects/moddablechess5d/moddablechess5d/include/Game.h \
  /usr/include/c++/13/map /usr/include/c++/13/bits/stl_tree.h \
  /usr/include/c++/13/bits/stl_map.h \
  /usr/include/c++/13/bits/stl_multimap.h /usr/include/c++/13/utility \
  /usr/include/c++/13/bits/stl_relops.h /usr/include/c++/13/variant \
  /usr/include/c++/13/bits/parse_numbers.h \
- /home/candy/projects/moddablechess5d/moddablechess5d/src/usingnames.h \
- /home/candy/projects/moddablechess5d/moddablechess5d/src/DataGame.h \
- /home/candy/projects/moddablechess5d/moddablechess5d/src/ScrollableGame.h \
+ /home/candy/projects/moddablechess5d/moddablechess5d/include/usingnames.h \
+ /home/candy/projects/moddablechess5d/moddablechess5d/include/DataGame.h \
+ /home/candy/projects/moddablechess5d/moddablechess5d/include/ScrollableGame.h \
  /usr/include/c++/13/iterator /usr/include/c++/13/bits/stream_iterator.h

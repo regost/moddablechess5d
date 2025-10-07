@@ -9,8 +9,6 @@
 #include <string>
 #include <functional>
 #include <stdint.h>
-//#include "TextureBuffer.h"
-//#include <SFML/Graphics.hpp>
 
 using namespace std;
 

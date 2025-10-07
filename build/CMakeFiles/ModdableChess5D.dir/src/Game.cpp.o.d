@@ -1,7 +1,7 @@
 CMakeFiles/ModdableChess5D.dir/src/Game.cpp.o: \
  /home/candy/projects/moddablechess5d/moddablechess5d/src/Game.cpp \
  /usr/include/stdc-predef.h \
- /home/candy/projects/moddablechess5d/moddablechess5d/src/Game.h \
+ /home/candy/projects/moddablechess5d/moddablechess5d/include/Game.h \
  /usr/include/c++/13/functional \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -110,8 +110,8 @@ CMakeFiles/ModdableChess5D.dir/src/Game.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
- /home/candy/projects/moddablechess5d/moddablechess5d/src/usingnames.h \
- /home/candy/projects/moddablechess5d/moddablechess5d/src/DataGame.h \
+ /home/candy/projects/moddablechess5d/moddablechess5d/include/usingnames.h \
+ /home/candy/projects/moddablechess5d/moddablechess5d/include/DataGame.h \
  /usr/include/c++/13/iostream /usr/include/c++/13/ostream \
  /usr/include/c++/13/ios /usr/include/c++/13/iosfwd \
  /usr/include/c++/13/bits/stringfwd.h /usr/include/c++/13/bits/postypes.h \
@@ -180,7 +180,7 @@ CMakeFiles/ModdableChess5D.dir/src/Game.cpp.o: \
  /usr/include/c++/13/bits/basic_ios.tcc \
  /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/istream \
  /usr/include/c++/13/bits/istream.tcc \
- /home/candy/projects/moddablechess5d/moddablechess5d/src/HelperStructs.h \
+ /home/candy/projects/moddablechess5d/moddablechess5d/include/HelperStructs.h \
  /usr/include/c++/13/list /usr/include/c++/13/bits/stl_list.h \
  /usr/include/c++/13/bits/allocated_ptr.h \
  /usr/include/c++/13/bits/list.tcc /usr/include/c++/13/algorithm \
@@ -190,11 +190,11 @@ CMakeFiles/ModdableChess5D.dir/src/Game.cpp.o: \
  /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
  /usr/include/c++/13/bits/fstream.tcc \
- /home/candy/projects/moddablechess5d/moddablechess5d/src/Piece.h \
+ /home/candy/projects/moddablechess5d/moddablechess5d/include/Piece.h \
  /usr/include/c++/13/bitset \
- /home/candy/projects/moddablechess5d/moddablechess5d/src/ScrollableGame.h \
- /home/candy/projects/moddablechess5d/moddablechess5d/src/Timeline.h \
- /home/candy/projects/moddablechess5d/moddablechess5d/src/Enum.h \
- /home/candy/projects/moddablechess5d/moddablechess5d/src/VConstructor.h \
- /home/candy/projects/moddablechess5d/moddablechess5d/src/VConstructorClasses.h \
- /home/candy/projects/moddablechess5d/moddablechess5d/src/Board.h
+ /home/candy/projects/moddablechess5d/moddablechess5d/include/ScrollableGame.h \
+ /home/candy/projects/moddablechess5d/moddablechess5d/include/Timeline.h \
+ /home/candy/projects/moddablechess5d/moddablechess5d/include/Enum.h \
+ /home/candy/projects/moddablechess5d/moddablechess5d/include/VConstructor.h \
+ /home/candy/projects/moddablechess5d/moddablechess5d/include/VConstructorClasses.h \
+ /home/candy/projects/moddablechess5d/moddablechess5d/include/Board.h

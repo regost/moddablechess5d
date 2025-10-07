@@ -1,7 +1,7 @@
 CMakeFiles/ModdableChess5D.dir/src/LoadPgn.cpp.o: \
  /home/candy/projects/moddablechess5d/moddablechess5d/src/LoadPgn.cpp \
  /usr/include/stdc-predef.h \
- /home/candy/projects/moddablechess5d/moddablechess5d/src/LoadPgn.h \
+ /home/candy/projects/moddablechess5d/moddablechess5d/include/LoadPgn.h \
  /usr/include/c++/13/iostream /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -158,8 +158,8 @@ CMakeFiles/ModdableChess5D.dir/src/LoadPgn.cpp.o: \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
- /home/candy/projects/moddablechess5d/moddablechess5d/src/ScrollableGame.h \
- /home/candy/projects/moddablechess5d/moddablechess5d/src/Game.h \
+ /home/candy/projects/moddablechess5d/moddablechess5d/include/ScrollableGame.h \
+ /home/candy/projects/moddablechess5d/moddablechess5d/include/Game.h \
  /usr/include/c++/13/functional /usr/include/c++/13/bits/std_function.h \
  /usr/include/c++/13/unordered_map \
  /usr/include/c++/13/bits/unordered_map.h \
@@ -181,9 +181,9 @@ CMakeFiles/ModdableChess5D.dir/src/LoadPgn.cpp.o: \
  /usr/include/c++/13/bits/stl_multimap.h /usr/include/c++/13/utility \
  /usr/include/c++/13/bits/stl_relops.h /usr/include/c++/13/variant \
  /usr/include/c++/13/bits/parse_numbers.h \
- /home/candy/projects/moddablechess5d/moddablechess5d/src/usingnames.h \
- /home/candy/projects/moddablechess5d/moddablechess5d/src/DataGame.h \
- /home/candy/projects/moddablechess5d/moddablechess5d/src/HelperStructs.h \
+ /home/candy/projects/moddablechess5d/moddablechess5d/include/usingnames.h \
+ /home/candy/projects/moddablechess5d/moddablechess5d/include/DataGame.h \
+ /home/candy/projects/moddablechess5d/moddablechess5d/include/HelperStructs.h \
  /usr/include/c++/13/algorithm \
  /usr/include/c++/13/pstl/glue_algorithm_defs.h \
  /usr/include/c++/13/pstl/execution_defs.h /usr/include/c++/13/fstream \
@@ -191,7 +191,7 @@ CMakeFiles/ModdableChess5D.dir/src/LoadPgn.cpp.o: \
  /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
  /usr/include/c++/13/bits/fstream.tcc \
- /home/candy/projects/moddablechess5d/moddablechess5d/src/Piece.h \
+ /home/candy/projects/moddablechess5d/moddablechess5d/include/Piece.h \
  /usr/include/c++/13/bitset \
  /home/candy/projects/moddablechess5d/moddablechess5d/src/Node.cpp \
  /usr/include/c++/13/stack /usr/include/c++/13/deque \

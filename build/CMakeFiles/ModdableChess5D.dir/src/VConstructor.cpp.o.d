@@ -1,7 +1,7 @@
 CMakeFiles/ModdableChess5D.dir/src/VConstructor.cpp.o: \
  /home/candy/projects/moddablechess5d/moddablechess5d/src/VConstructor.cpp \
  /usr/include/stdc-predef.h \
- /home/candy/projects/moddablechess5d/moddablechess5d/src/VConstructor.h \
+ /home/candy/projects/moddablechess5d/moddablechess5d/include/VConstructor.h \
  /usr/include/c++/13/map /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -132,9 +132,9 @@ CMakeFiles/ModdableChess5D.dir/src/VConstructor.cpp.o: \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
- /home/candy/projects/moddablechess5d/moddablechess5d/src/usingnames.h \
- /home/candy/projects/moddablechess5d/moddablechess5d/src/VConstructorClasses.h \
- /home/candy/projects/moddablechess5d/moddablechess5d/src/Game.h \
+ /home/candy/projects/moddablechess5d/moddablechess5d/include/usingnames.h \
+ /home/candy/projects/moddablechess5d/moddablechess5d/include/VConstructorClasses.h \
+ /home/candy/projects/moddablechess5d/moddablechess5d/include/Game.h \
  /usr/include/c++/13/functional /usr/include/c++/13/bits/std_function.h \
  /usr/include/c++/13/typeinfo /usr/include/c++/13/unordered_map \
  /usr/include/c++/13/bits/unordered_map.h \
@@ -145,7 +145,7 @@ CMakeFiles/ModdableChess5D.dir/src/VConstructor.cpp.o: \
  /usr/include/c++/13/bits/stl_heap.h \
  /usr/include/c++/13/bits/uniform_int_dist.h \
  /usr/include/c++/13/bits/stl_tempbuf.h \
- /home/candy/projects/moddablechess5d/moddablechess5d/src/DataGame.h \
+ /home/candy/projects/moddablechess5d/moddablechess5d/include/DataGame.h \
  /usr/include/c++/13/iostream /usr/include/c++/13/ostream \
  /usr/include/c++/13/ios /usr/include/c++/13/exception \
  /usr/include/c++/13/bits/exception_ptr.h \
@@ -183,4 +183,4 @@ CMakeFiles/ModdableChess5D.dir/src/VConstructor.cpp.o: \
  /usr/include/c++/13/bits/basic_ios.tcc \
  /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/istream \
  /usr/include/c++/13/bits/istream.tcc \
- /home/candy/projects/moddablechess5d/moddablechess5d/src/Board.h
+ /home/candy/projects/moddablechess5d/moddablechess5d/include/Board.h
