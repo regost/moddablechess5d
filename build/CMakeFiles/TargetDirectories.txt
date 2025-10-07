@@ -1,0 +1,3 @@
+/home/candy/projects/moddablechess5d/moddablechess5d/build/CMakeFiles/ModdableChess5D.dir
+/home/candy/projects/moddablechess5d/moddablechess5d/build/CMakeFiles/edit_cache.dir
+/home/candy/projects/moddablechess5d/moddablechess5d/build/CMakeFiles/rebuild_cache.dir

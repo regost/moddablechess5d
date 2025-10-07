@@ -1,0 +1,19 @@
+[
+    {
+        "key": "f5",
+        "command": "workbench.action.debug.start",
+        "when": "!inDebugMode"
+    },
+    {
+        "key": "shift+f5",
+        "command": "workbench.action.tasks.runTask",
+        "args": "run",
+        "when": "!inDebugMode"
+    },
+    {
+        "key": "ctrl+shift+f5",
+        "command": "workbench.action.tasks.runTask",
+        "args": "cmake configure",
+        "when": "!inDebugMode"
+    }
+]
