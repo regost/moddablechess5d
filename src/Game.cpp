@@ -29,9 +29,11 @@ Piece& Game::GetPieceAddress(XYTL& click)
 
 Board Game::CreateBoard(Board old, std::variant<Timeline*, Board> extra)
 {
+	//#if debug
 	if (GetBoardSize() == 0) {
-		throw "board size is 0";
+		throw "Board Game::CreateBoard() board size is 0";
 	}
+	
 
 	Board newboard(GetBoardSize());
 	

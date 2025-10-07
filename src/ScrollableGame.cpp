@@ -4,9 +4,14 @@
 #include "LoadPgn.h"
 #include "Game.h"
 #include "Node.cpp"
-// |1 2 3 end| |1 2 3 end|
-//         +
-//         | 
+
+// moveset(1 2 3 end) moveset(1 2 end)
+//                ∧  submit() ∧ 1st move isnt played
+//                |           | 
+
+// moveset(1 2 3 end) moveset(1 2 end)
+//                ∧  nextmove() ∧ 1st move is played
+//                |             | 2nd move isnt played
 
 void ScrollableGame::SetNotation(string path) {
 	LoadPgn::ParsePNGfile(this->primeNode, path, this->state.PrimeTimeline, this->state.NumberOfNegativeTurns);

@@ -12,11 +12,13 @@ Timeline* Timeline::CreateTimelinePointer(uint16_t SizeOfTimeLine, uint16_t Size
 
 void Timeline::AllocateMemory()
 {
+
 	try { timeline = new Board[size]; }
 	catch (std::bad_alloc& e) { cout << e.what(); }
-	for (uint16_t i = 0; i < this->size; ++i)
+	for (uint16_t i = 0; i < this->size; ++i){
 		timeline[i].SetNull();
-	//todo replace a loop (instead of indexing)
+	}
+	//TODO replace a loop (instead of indexing use iterator)
 }
 
 void Timeline::AllocateMemory(uint16_t size)
@@ -40,18 +42,17 @@ Timeline::Timeline(uint16_t SizeOfTimeLine_)
 }
 
 Timeline::~Timeline() {
-
-
+	//did not implement ~Board yet
 }
 
 
 
 void Timeline::CreateNextTurn(uint16_t Size,Game& chess)
 {
+	//TODO replace array with a vector
 	if (currentTurn == size) { 
 		throw "timeline overflow";
 		return;
-		//todo delete that eventually
 	} 
 
 	Board CurrentBoard = timeline[currentTurn];
@@ -106,10 +107,12 @@ uint16_t Timeline::GetFirstBoardIndex() { return this->firstBoard; }
 Board Timeline::GetBoard(uint16_t index) { return this->timeline[index]; }
 uint16_t Timeline::GetSize() { return this->size; }
 
+
 void Timeline::SetCurrentTurn(uint16_t toSet) { currentTurn = toSet; }
 void Timeline::SetIndexFirstBoard(uint16_t toSet) { this->firstBoard = toSet; }
 void Timeline::SetSizeOfTimeline(uint16_t toSet) { this->size = toSet; }
 void Timeline::SetBoard(uint16_t index, Board toSet) { this->timeline[index].SetBoardPointer(toSet.GetBoard()); }
+
 
 void Timeline::SetJustCreatedTimeline(uint16_t index, Board board)
 {

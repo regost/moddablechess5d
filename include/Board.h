@@ -51,7 +51,7 @@ public:
 
 	operator rawpointer();
 
-	//void Draw(RenderWindow& window, BorderBoard border, float step, float x, float y);
+	
 
 };
 

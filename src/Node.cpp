@@ -233,7 +233,9 @@ void Node<T>::Load(string& path, Game& chess)
 	while (std::getline(file, line)) {
 		if (line.empty()) { continue; }
 
+		// needs to take a slice of a string
 		size_t start = 0;
+
 		toadd = new Node<T>();
 		for (size_t i = 0; i < line.size(); ++i) {
 			if (line[i] == '/') {
@@ -246,20 +248,27 @@ void Node<T>::Load(string& path, Game& chess)
 				start = i + 1;
 			}
 		}
-		//currentnode->AddAndSetLast(toadd);
+
 		currentnode->WriteOrFollow(toadd);
+		//climbing up a tree
 		currentnode = toadd;
 
-		//cout << line.substr(start, line.size() - start);
-		int movesback = std::stoi(line.substr(start, line.size() - start));
+		//"Nf3/0" ~ (done)"Nf3/" ~ TODO "Nf3"
+		int movesback = 0;
+		const std::string movesbackstr = line.substr(start, line.size() - start);
 
+		if(movesbackstr != "" && movesbackstr != " " && movesbackstr != "  "){
+			movesback = std::stoi(line.substr(start, line.size() - start));
+		}
+		
+		//who moves
 		if (!(movesback & 1)) { color = !color; }
 
+		//climbing down a tree N moves back
 		for (int i = 0; i < movesback; ++i) {
 			currentnode = currentnode->p_previous;
 		}
 	}
 }
-
 
 #endif

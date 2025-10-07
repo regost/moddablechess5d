@@ -26,14 +26,18 @@ uint16_t firstBoard;
 class Timeline
 {
 public:
-	//
+	//TODO Timeline should not be a pointer ~= (rearange other shit)
+	//Timeline* is not efficient 
 	static Timeline* CreateTimelinePointer(uint16_t SizeOfTimeLine, uint16_t SizeBoard, uint16_t indexFirstBoard, Board toSet);
 private:
 	//TODO make it a vector
 	Board* timeline = nullptr; //array of pointers Board;
-	uint16_t size; //example: 512  -> 256 moves
+	uint16_t size; //example: 512  [white, black] * 256
 	uint16_t currentTurn;//the present of current timeline
 	uint16_t firstBoard;
+
+	//TODO this is gonna be used for modding
+	rawpointer extradata;
 
 	void AllocateMemory();
 	void SetSizeOfTimeline(uint16_t toSet);

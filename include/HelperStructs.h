@@ -44,13 +44,15 @@ struct XYTL : XY
 	XYTL() = default;
 	XYTL(uint8_t x, uint8_t y, uint16_t t, uint16_t l) : XY(x, y) { this->t = t; this->l = l; }
 	uint16_t t;
-	//should be int and add to the Game uint16_t shift
+	//TODO should be int and add to the Game uint16_t shift
+	//so now i have t0 = 64 which is a bit wrong 
+	//coz when i am gonna expand (number of) timelines this is gonna fall apart
 	uint16_t l;
 	void Print();
 	bool operator==(XYTL& r_value);
 };
 
-
+//TODO it's a fucking Move not a Turn
 struct Turn {
 	XYTL begin;
 	XYTL end;
@@ -91,7 +93,7 @@ struct MoveSet {
 
 
 template <typename T> struct ActionAndString {
-	ActionAndString(std::string Parse, uint16_t primeTimeline, uint16_t NegativeTurns, uint16_t isBlackMove);
+	ActionAndString(const std::string& Parse, uint16_t primeTimeline, uint16_t NegativeTurns, uint16_t isBlackMove);
 	ActionAndString() = default;
 	void Print();
 	void SetString(Game& toset);
@@ -101,7 +103,7 @@ template <typename T> struct ActionAndString {
 };
 
 template<typename T>
-inline ActionAndString<T>::ActionAndString(std::string Parse, uint16_t primeTimeline, uint16_t NegativeTurns, uint16_t isBlackMove)
+inline ActionAndString<T>::ActionAndString(const std::string& Parse, uint16_t primeTimeline, uint16_t NegativeTurns, uint16_t isBlackMove)
 {
 	move = Turn(Parse, primeTimeline, NegativeTurns, isBlackMove);
 	str = Parse;
