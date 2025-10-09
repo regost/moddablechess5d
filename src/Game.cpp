@@ -11,6 +11,11 @@ Timeline*& Game::GetTimelines() {
 	return *this->multiverse;
 }
 
+Timeline* Game::GetTimeline(uint16_t l)
+{
+    return this->multiverse[l];
+}
+
 uint8_t Game::GetPiece(XYTL& click)
 {
 	return multiverse[click.l]->GetBoard(click.t).GetSquare(click.x, click.y, this->state.border);
@@ -50,7 +55,7 @@ Timeline* Game::CreateTimeline(Timeline* old, std::variant<Timeline*, Board> ext
 {
 
 	//const rawpointer newtimelineptr = reinterpret_cast<rawpointer>(newtimeline);
-	const size_t size = this->sizebytes[this->sizebytes[MULTIVERSE]];
+	const size_t size = this->sizebytes[MULTIVERSE];
 	rawpointer newtimelineptr = new char[size];
 	const rawpointer oldtimelineptr = reinterpret_cast<rawpointer>(old);
 
@@ -61,6 +66,16 @@ Timeline* Game::CreateTimeline(Timeline* old, std::variant<Timeline*, Board> ext
 	return reinterpret_cast<Timeline*>(newtimelineptr);
 }
 
+void Game::CreateTimeline(Timeline &created, Timeline *old, std::variant<Timeline *, Board> extra)
+{
+	const size_t allocatedsize = this->sizebytes[MULTIVERSE];
+	created.extradata = new char[allocatedsize];
+
+	//construct that
+	for (auto it : this->constructor[Game::TIMELINE]) {
+		it->Construct(created.extradata , old->extradata, extra,this);
+	}
+}
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 

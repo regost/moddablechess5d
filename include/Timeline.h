@@ -36,16 +36,17 @@ private:
 	uint16_t currentTurn;//the present of current timeline
 	uint16_t firstBoard;
 
+public:
 	//TODO this is gonna be used for modding
 	rawpointer extradata;
-
+private:
 	void AllocateMemory();
 	void SetSizeOfTimeline(uint16_t toSet);
 public:
 	Timeline() = default;
 	Timeline(uint16_t SizeOfTimeLine_, uint16_t BoardSize, Board FirstBoard, uint16_t indexFirstBoard_);
 	Timeline(uint16_t SizeOfTimeLine_);
-
+	Timeline(Timeline&& move);
 	~Timeline();// will be deleted, Game class clears that shit
 
 	//TODO make private
@@ -66,6 +67,7 @@ public:
 	uint16_t GetFirstBoardIndex();
 	uint16_t GetSize();
 	uint16_t GetCurrentTurn();
+
 	////////////////////////////////////////////////////////////
 	void SetCurrentTurn(uint16_t toSet);
 	void SetIndexFirstBoard(uint16_t toSet);

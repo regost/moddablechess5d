@@ -15,10 +15,11 @@ void Timeline::AllocateMemory()
 
 	try { timeline = new Board[size]; }
 	catch (std::bad_alloc& e) { cout << e.what(); }
+
 	for (uint16_t i = 0; i < this->size; ++i){
 		timeline[i].SetNull();
 	}
-	//TODO replace a loop (instead of indexing use iterator)
+	//TODO replace a loop (instead of indexing, use iterator)
 }
 
 void Timeline::AllocateMemory(uint16_t size)
@@ -39,6 +40,17 @@ Timeline::Timeline(uint16_t SizeOfTimeLine_)
 {
 	SetSizeOfTimeline(SizeOfTimeLine_);
 	AllocateMemory();
+}
+
+//use std::move
+//it is not a copy constructor
+Timeline::Timeline(Timeline &&move)
+{
+	this->extradata = extradata;
+	this->currentTurn = currentTurn;
+	this->firstBoard = firstBoard;
+	this->size = size;
+	this->timeline = timeline;
 }
 
 Timeline::~Timeline() {

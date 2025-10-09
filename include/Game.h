@@ -84,16 +84,21 @@ public:
 	//////////////////////////////////////////////////////////////////////////
 	Board CreateBoard(Board old, std::variant<Timeline*, Board> extra);
 	Timeline* CreateTimeline(Timeline* old, std::variant<Timeline*, Board> extra);
+
+	void CreateTimeline(Timeline& created, Timeline* old, std::variant<Timeline*, Board> extra);
 public:
 	size_t GetBoardSize();
 	GameState& GetState();
 	Timeline*& GetTimelines();
+
+	Timeline* GetTimeline(uint16_t l);
 
 	uint8_t GetPiece(XYTL& coordinates);
 
 	Piece& GetPieceAddress(uint8_t piece);
 	Piece& GetPieceAddress(XYTL& click);
 
+	
 	void SetTimeline(uint16_t l, Timeline* toSet);
 	//void SetBoard(uint16_t l, uint16_t t, Board toSet);
 	//void SetPiece(XYTL coordinates, uint8_t toSetPiece);
