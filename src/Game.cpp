@@ -11,9 +11,9 @@ Timeline*& Game::GetTimelines() {
 	return *this->multiverse;
 }
 
-Timeline* Game::GetTimeline(uint16_t l)
+Timeline& Game::GetTimeline(uint16_t l)
 {
-    return this->multiverse[l];
+    return *this->multiverse[l];
 }
 
 uint8_t Game::GetPiece(XYTL& click)
@@ -53,7 +53,6 @@ Board Game::CreateBoard(Board old, std::variant<Timeline*, Board> extra)
 
 Timeline* Game::CreateTimeline(Timeline* old, std::variant<Timeline*, Board> extra)
 {
-
 	//const rawpointer newtimelineptr = reinterpret_cast<rawpointer>(newtimeline);
 	const size_t size = this->sizebytes[MULTIVERSE];
 	rawpointer newtimelineptr = new char[size];
@@ -66,14 +65,14 @@ Timeline* Game::CreateTimeline(Timeline* old, std::variant<Timeline*, Board> ext
 	return reinterpret_cast<Timeline*>(newtimelineptr);
 }
 
-void Game::CreateTimeline(Timeline &created, Timeline *old, std::variant<Timeline *, Board> extra)
+void Game::CreateTimeline(Timeline &created, Timeline *old, Board extra)
 {
 	const size_t allocatedsize = this->sizebytes[MULTIVERSE];
 	created.extradata = new char[allocatedsize];
 
 	//construct that
 	for (auto it : this->constructor[Game::TIMELINE]) {
-		it->Construct(created.extradata , old->extradata, extra,this);
+		it->Construct(created.extradata , old->extradata, extra, this);
 	}
 }
 
@@ -132,7 +131,9 @@ Board Game::MakeTravelAndGetBoard(const Turn& turn, const bool color)
 
 	if (color == ColorType::Black) {//Black
 		OnBlackCreatesTimeline(turn.end.t);
-		if (multiverse[state.BlackTimelinesBorder.InactiveTimelines] == nullptr) { 
+
+		const Timeline& timeline = *multiverse[state.BlackTimelinesBorder.InactiveTimelines];
+		if (timeline == false) { 
 
 		#if not NEWTIMELINECONSTRUCTOR
 			Timeline* temp = new Timeline(this->state.border.t);//edited

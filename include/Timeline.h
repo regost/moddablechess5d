@@ -48,8 +48,10 @@ public:
 	Timeline(uint16_t SizeOfTimeLine_);
 	Timeline(Timeline&& move);
 	~Timeline();// will be deleted, Game class clears that shit
-
-	//TODO make private
+	//true if timeline is allocated
+	//false is it's not allocated
+	operator bool() const;
+	//DO make private
 	void AllocateMemory(uint16_t size);
 
 	void CreateNextTurn(uint16_t size, Game& game); 

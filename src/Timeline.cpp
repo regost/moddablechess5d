@@ -22,6 +22,11 @@ void Timeline::AllocateMemory()
 	//TODO replace a loop (instead of indexing, use iterator)
 }
 
+Timeline::operator bool() const
+{
+	return timeline != nullptr;
+}
+
 void Timeline::AllocateMemory(uint16_t size)
 {
 	this->size = size;
