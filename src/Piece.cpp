@@ -46,7 +46,7 @@ bool Piece::CanTakeThePiece(bool color_)
 
 
 
-Piece::Piece(string FEN, string PGN, bool color_, bool isRoyal_, function<void(Game&, Turn)> makeMove_)
+Piece::Piece(string FEN, string PGN, bool color_, bool isRoyal_, function<void(Game&, Move)> makeMove_)
 {
     this->FEN = FEN;
     this->PGN = PGN;

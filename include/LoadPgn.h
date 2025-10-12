@@ -22,7 +22,7 @@ struct TurnString;
 class LoadPgn
 {
 public:
-	static void ParsePNGfile(Node<Turn>* listOfMoves, const string& path, uint16_t primeTimeline, uint16_t negativeTurns);
+	static void ParsePNGfile(Node<Move>* listOfMoves, const string& path, uint16_t primeTimeline, uint16_t negativeTurns);
 	static void SetPosition(list<MoveSet>& listOfMoves, Game& game);
 };
 

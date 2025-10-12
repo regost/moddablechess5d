@@ -76,9 +76,9 @@ void ScrollableGame::SubmitInNotation()
 }
 
 
-void ScrollableGame::WriteMoveOrFollow(Node<Turn>* movesetToWrite)
+void ScrollableGame::WriteMoveOrFollow(Node<Move>* movesetToWrite)
 {
-	Node<Turn>* tofind = currentNode->Find(*movesetToWrite);
+	Node<Move>* tofind = currentNode->Find(*movesetToWrite);
 	if (tofind == nullptr) {
 		currentNode->AddAndSetLast(movesetToWrite);
 		currentNode = movesetToWrite;
@@ -114,7 +114,7 @@ void ScrollableGame::SaveAsDatabase(string& path)
 
 ScrollableGame::ScrollableGame(XYTL border, uint16_t WhiteBorder, uint16_t BlackBorder, uint16_t thePresent)
 	: Game(border, WhiteBorder, BlackBorder, thePresent) {
-	currentNode = new Node<Turn>();
+	currentNode = new Node<Move>();
 	currentNode->p_previous = nullptr;
 	primeNode = currentNode;
 	currentMove = currentNode->data.end();
@@ -135,19 +135,19 @@ void ScrollableGame::PrintNextMove()
 	//currentNode->vectorOfNodes[0]->data[0].str;
 }
 
-void ScrollableGame::MakeMoveAndIncrement(vector<ActionAndString<Turn>>::iterator& currentMove)
+void ScrollableGame::MakeMoveAndIncrement(vector<ActionAndString<Move>>::iterator& currentMove)
 {
 	MakeMove(currentMove->move);
 	++currentMove;
 }
 
-void ScrollableGame::UndoMoveAndDecrement(vector<ActionAndString<Turn>>::iterator& currentMove)
+void ScrollableGame::UndoMoveAndDecrement(vector<ActionAndString<Move>>::iterator& currentMove)
 {
 	--currentMove;
 	UndoMove(currentMove->move);
 }
 
-void ScrollableGame::MakeAllMovesAndSetEnd(vector<ActionAndString<Turn>>& moveset, vector<ActionAndString<Turn>>::iterator& currentMove)
+void ScrollableGame::MakeAllMovesAndSetEnd(vector<ActionAndString<Move>>& moveset, vector<ActionAndString<Move>>::iterator& currentMove)
 {
 	for (; currentMove != moveset.end();) {
 		(*currentMove).move.MakeMove(*this);
@@ -155,7 +155,7 @@ void ScrollableGame::MakeAllMovesAndSetEnd(vector<ActionAndString<Turn>>& movese
 	}
 }
 
-void ScrollableGame::UndoAllMovesAndSetBegin(vector<ActionAndString<Turn>>& moveset, vector<ActionAndString<Turn>>::iterator& currentMove)
+void ScrollableGame::UndoAllMovesAndSetBegin(vector<ActionAndString<Move>>& moveset, vector<ActionAndString<Move>>::iterator& currentMove)
 {
 	for (; currentMove != moveset.begin();) {
 		--currentMove;
@@ -164,12 +164,12 @@ void ScrollableGame::UndoAllMovesAndSetBegin(vector<ActionAndString<Turn>>& move
 }
 
 
-void ScrollableGame::SetIteratorEnd(vector<ActionAndString<Turn>>& moveset, vector<ActionAndString<Turn>>::iterator& currentMove)
+void ScrollableGame::SetIteratorEnd(vector<ActionAndString<Move>>& moveset, vector<ActionAndString<Move>>::iterator& currentMove)
 {
 	currentMove = moveset.end();
 }
 
-void ScrollableGame::SetIteratorBegin(vector<ActionAndString<Turn>>& moveset, vector<ActionAndString<Turn>>::iterator& currentMove)
+void ScrollableGame::SetIteratorBegin(vector<ActionAndString<Move>>& moveset, vector<ActionAndString<Move>>::iterator& currentMove)
 {
 	currentMove = moveset.begin();
 }

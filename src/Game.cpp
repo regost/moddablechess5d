@@ -105,12 +105,12 @@ uint16_t Game::GetNumberOfTimelines() {
 	return 1 + state.BlackTimelinesBorder.InactiveTimelines - state.WhiteTimelinesBorder.InactiveTimelines;
 }
 
-void Game::MakeRegularMove(Turn& toMove) {//non-castle , non-en passant move , non-special move
+void Game::MakeRegularMove(Move& toMove) {//non-castle , non-en passant move , non-special move
 	MakeRegularMove(toMove, multiverse[toMove.begin.l]->GetCurrentTurnBoard().GetSquare(toMove.begin.x, toMove.begin.y, state.border));
 }
 
 
-void Game::NotTimeTravelMove(uint8_t setPieceAfterMove, Turn& toMove)
+void Game::NotTimeTravelMove(uint8_t setPieceAfterMove, Move& toMove)
 {
 	multiverse[toMove.begin.l]->CreateNextTurn(this->state.SizeBoard,*this);
 	if (toMove.begin.l != toMove.end.l) {
@@ -120,7 +120,7 @@ void Game::NotTimeTravelMove(uint8_t setPieceAfterMove, Turn& toMove)
 	multiverse[toMove.end.l]->GetCurrentTurnBoard().SetSquare(setPieceAfterMove, toMove.end.x, toMove.end.y, state.border);
 }
 
-Board Game::MakeTravelAndGetBoard(const Turn& turn, const bool color)
+Board Game::MakeTravelAndGetBoard(const Move& turn, const bool color)
 {
 	const uint16_t toSetTurn = turn.end.t + 1;
 
@@ -172,13 +172,13 @@ Board Game::MakeTravelAndGetBoard(const Turn& turn, const bool color)
 
 
 
-void Game::MakeMove(Turn& toMove)
+void Game::MakeMove(Move& toMove)
 {
 	Piece::PieceArray[multiverse[toMove.begin.l]->GetCurrentTurnBoard().GetSquare(toMove.begin.x, toMove.begin.y, state.border)].makeMove(*this, toMove);
 }
 
 
-void Game::MakeMoveSet(vector<Turn>& toMove, vector<Turn>::iterator& currentMove) {
+void Game::MakeMoveSet(vector<Move>& toMove, vector<Move>::iterator& currentMove) {
 
 	for (; currentMove != toMove.end(); ++currentMove) {
 		MakeMove(*currentMove);
@@ -186,7 +186,7 @@ void Game::MakeMoveSet(vector<Turn>& toMove, vector<Turn>::iterator& currentMove
 }
 
 
-void Game::MakeMoveSet(vector<Turn>& toMove) {
+void Game::MakeMoveSet(vector<Move>& toMove) {
 
 	for (auto it = toMove.begin(); it != toMove.end(); ++it) {
 		MakeMove(*it);
@@ -194,7 +194,7 @@ void Game::MakeMoveSet(vector<Turn>& toMove) {
 }
 
 
-void Game::UndoMove(Turn& toMove) {
+void Game::UndoMove(Move& toMove) {
 	if (state.Move == ColorType::Black) {
 		UndoMove(toMove, Game::_fBlackUndoTravel);
 		return;
@@ -203,7 +203,7 @@ void Game::UndoMove(Turn& toMove) {
 }
 
 
-void Game::UndoMoveSet(vector<Turn>& toMove, vector<Turn>::iterator& currentMove, function<void(Game& multiverse, Turn& toMove)> undoTravel) {
+void Game::UndoMoveSet(vector<Move>& toMove, vector<Move>::iterator& currentMove, function<void(Game& multiverse, Move& toMove)> undoTravel) {
 	while (currentMove != toMove.begin()) {
 		--currentMove;
 		this->UndoMove(*currentMove, undoTravel);
@@ -225,7 +225,7 @@ void Game::UndoMoveSet(vector<Turn>& toMove, vector<Turn>::iterator& currentMove
 //	
 //}
 
-void Game::UndoMove(Turn& move, function<void(Game& multiverse, Turn& toMove)> undoTravel)
+void Game::UndoMove(Move& move, function<void(Game& multiverse, Move& toMove)> undoTravel)
 {
 	this->multiverse[move.begin.l]->UndoTurn();
 
@@ -251,12 +251,12 @@ void Game::UndoMove(Turn& move, function<void(Game& multiverse, Turn& toMove)> u
 
 }
 
-void Game::UndoMoveSet(vector<Turn>& moveset, function<void(Game& multiverse, Turn& toMove)> undoTravel) {
-	vector<Turn>::iterator it = moveset.end();
+void Game::UndoMoveSet(vector<Move>& moveset, function<void(Game& multiverse, Move& toMove)> undoTravel) {
+	vector<Move>::iterator it = moveset.end();
 	UndoMoveSet(moveset, it, undoTravel);
 }
 
-void Game::UndoMoveSet(vector<Turn>& toMove)
+void Game::UndoMoveSet(vector<Move>& toMove)
 {
 
 	if ((this->state.Move == ColorType::White)) {
@@ -267,7 +267,7 @@ void Game::UndoMoveSet(vector<Turn>& toMove)
 }
 
 
-void Game::UndoMoveSet(vector<Turn>& toMove, vector<Turn>::iterator& currentMove)
+void Game::UndoMoveSet(vector<Move>& toMove, vector<Move>::iterator& currentMove)
 {
 	if ((this->state.Move == ColorType::White)) {
 		UndoMoveSet(toMove, currentMove, Game::_fWhiteUndoTravel);
@@ -276,7 +276,7 @@ void Game::UndoMoveSet(vector<Turn>& toMove, vector<Turn>::iterator& currentMove
 	UndoMoveSet(toMove, currentMove, Game::_fBlackUndoTravel);
 }
 
-void WhiteUndoTravel(Game& chess, Turn& toMove) {
+void WhiteUndoTravel(Game& chess, Move& toMove) {
 	chess.GetTimeline(chess.state.WhiteTimelinesBorder.InactiveTimelines).UndoTurn();
 	if (!(chess.state.TimelineBalance > chess.state.MaxActiveTimelineDifference)) {
 		++chess.state.WhiteTimelinesBorder.ActiveTimelines;
@@ -291,7 +291,7 @@ void WhiteUndoTravel(Game& chess, Turn& toMove) {
 	++chess.state.ThePresent;
 }
 
-void BlackUndoTravel(Game& chess, Turn& toMove) {
+void BlackUndoTravel(Game& chess, Move& toMove) {
 	chess.GetTimeline(chess.state.BlackTimelinesBorder.InactiveTimelines).UndoTurn();
 	if (!(chess.state.TimelineBalance < -chess.state.MaxActiveTimelineDifference)) {
 		--chess.state.BlackTimelinesBorder.ActiveTimelines;
@@ -308,8 +308,8 @@ void BlackUndoTravel(Game& chess, Turn& toMove) {
 
 }
 
-function<void(Game& multiverse, Turn& toMove)> Game::_fWhiteUndoTravel = WhiteUndoTravel;
-function<void(Game& multiverse, Turn& toMove)> Game::_fBlackUndoTravel = BlackUndoTravel;
+function<void(Game& multiverse, Move& toMove)> Game::_fWhiteUndoTravel = WhiteUndoTravel;
+function<void(Game& multiverse, Move& toMove)> Game::_fBlackUndoTravel = BlackUndoTravel;
 
 
 namespace canclick {
@@ -400,7 +400,7 @@ bool Game::CanSubmit()
 
 
 
-void Game::MakeRegularMove(Turn& toMove, uint8_t piece)//non-castle , non-en passant moves but you can turn the piece in moved piece (e2e4, 0-0)
+void Game::MakeRegularMove(Move& toMove, uint8_t piece)//non-castle , non-en passant moves but you can turn the piece in moved piece (e2e4, 0-0)
 {
 	if (multiverse[toMove.end.l]->GetCurrentTurn() == toMove.end.t) {
 		NotTimeTravelMove(piece, toMove);

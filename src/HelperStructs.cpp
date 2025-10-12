@@ -10,7 +10,7 @@
 
 using namespace std;
 
-void MoveSet::Add(Turn& turn)
+void MoveSet::Add(Move& turn)
 {
 	vectorOfTurns.push_back(turn);
 }

@@ -20,7 +20,7 @@
 using namespace std;
 
 class Piece;
-struct Turn;
+struct Move;
 struct XYTL;
 struct BorderBoard;
 class Game;
@@ -53,15 +53,15 @@ struct XYTL : XY
 };
 
 //TODO it's a fucking Move not a Turn
-struct Turn {
+struct Move {
 	XYTL begin;
 	XYTL end;
-	Turn(uint8_t x1, uint8_t y1, uint16_t t1, uint16_t l1, uint8_t x2, uint8_t y2, uint16_t t2, uint16_t l2);
-	Turn(const std::string Parse, uint16_t primeTimeline, uint16_t NegativeTurns, uint16_t isBlackMove);
-	Turn() = default;
-	~Turn() = default;
-	bool operator==(Turn& r_value);
-	bool isEqual(Turn& r_value);
+	Move(uint8_t x1, uint8_t y1, uint16_t t1, uint16_t l1, uint8_t x2, uint8_t y2, uint16_t t2, uint16_t l2);
+	Move(const std::string Parse, uint16_t primeTimeline, uint16_t NegativeTurns, uint16_t isBlackMove);
+	Move() = default;
+	~Move() = default;
+	bool operator==(Move& r_value);
+	bool isEqual(Move& r_value);
 	void Print();
 	void MakeMove(Game& chess);
 	void UndoMove(Game& chess);
@@ -83,8 +83,8 @@ struct TurnString : Turn {
 
 struct MoveSet {
 	MoveSet() = default;
-	std::vector<Turn> vectorOfTurns;
-	void Add(Turn& turn);
+	std::vector<Move> vectorOfTurns;
+	void Add(Move& turn);
 	void Print();
 	bool isEqual(MoveSet& r_value);
 	bool operator==(MoveSet& r_value);
@@ -105,7 +105,7 @@ template <typename T> struct ActionAndString {
 template<typename T>
 inline ActionAndString<T>::ActionAndString(const std::string& Parse, uint16_t primeTimeline, uint16_t NegativeTurns, uint16_t isBlackMove)
 {
-	move = Turn(Parse, primeTimeline, NegativeTurns, isBlackMove);
+	move = Move(Parse, primeTimeline, NegativeTurns, isBlackMove);
 	str = Parse;
 }
 

@@ -13,7 +13,7 @@
 using namespace std;
 
 class Game;
-struct Turn;
+struct Move;
 
 
 class Piece
@@ -27,8 +27,8 @@ public:
 	string PGN;
 	//Sprite sprite;
 
-	function<void(Game&, Turn)> makeMove;
-	Piece(string FEN, string PGN, bool color_, bool isRoyal_, function<void(Game&, Turn)> Movement);
+	function<void(Game&, Move)> makeMove;
+	Piece(string FEN, string PGN, bool color_, bool isRoyal_, function<void(Game&, Move)> Movement);
 	Piece(string FEN, string PGN, uint8_t bitinfo);
 	bool CanTakeThePiece(bool color);
 	uint8_t bitinfo;

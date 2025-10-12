@@ -21,7 +21,7 @@ enum PieceType {
     WMovedRook = 8
 };
 
-void f_VoidCanNotMove(Game& chess, Turn turn) {
+void f_VoidCanNotMove(Game& chess, Move turn) {
     cout << "void can not move, you must fix that error\n";
     cout << "begin(" << "l: " << turn.begin.l << " " << "t: " << turn.begin.t << " " << "x: " << int(turn.begin.x) << " y: " << int(turn.begin.y) << ")\n";
     cout << "end(" << "l: " <<turn.end.l << " " << "t: " << turn.end.t << " " << "x: " << int(turn.end.x) << " " << "y: " << int(turn.end.y) << ")\n";
@@ -30,15 +30,15 @@ void f_VoidCanNotMove(Game& chess, Turn turn) {
     cout << a << endl;
 }
 
-void f_RegularMove(Game& multiverse, Turn turn) {
+void f_RegularMove(Game& multiverse, Move turn) {
     multiverse.MakeRegularMove(turn);
 }
-void f_TurnIntoMovedPiece(Game& multiverse, Turn turn) { // pawn -> moved pawn
+void f_TurnIntoMovedPiece(Game& multiverse, Move turn) { // pawn -> moved pawn
     
     uint8_t piece = multiverse.GetTimeline(turn.begin.l).GetBoard(turn.begin.t).GetSquare(turn.begin.x, turn.begin.y, multiverse.state.border);
     multiverse.MakeRegularMove(turn, piece + 2);
 }
-void f_BlackCastle(Game& multiverse, Turn turn) { //todo
+void f_BlackCastle(Game& multiverse, Move turn) { //todo
     uint8_t piece = multiverse.GetTimeline(turn.begin.l).GetBoard(turn.begin.t).GetSquare(turn.begin.x, turn.begin.y, multiverse.state.border);
     multiverse.MakeRegularMove(turn, PieceType::BMovedKing);
 
@@ -51,7 +51,7 @@ void f_BlackCastle(Game& multiverse, Turn turn) { //todo
         multiverse.GetTimeline(turn.end.l).GetCurrentTurnBoard().SetSquare(PieceType::BMovedRook, 3, multiverse.state.border.y - 1, multiverse.state.border);
     }
 }
-void f_WhiteCastle(Game& multiverse, Turn turn) { //todo
+void f_WhiteCastle(Game& multiverse, Move turn) { //todo
 
     uint8_t piece = multiverse.GetTimeline(turn.begin.l).GetBoard(turn.begin.t).GetSquare(turn.begin.x, turn.begin.y, multiverse.state.border);
     multiverse.MakeRegularMove(turn, PieceType::WMovedKing);
@@ -65,12 +65,12 @@ void f_WhiteCastle(Game& multiverse, Turn turn) { //todo
     }
 }
 
-void f_WhitePromotionAndEnPassant(Game& multiverse, Turn turn) { //todo
+void f_WhitePromotionAndEnPassant(Game& multiverse, Move turn) { //todo
     uint8_t piece = multiverse.GetTimeline(turn.begin.l).GetBoard(turn.begin.t).GetSquare(turn.begin.x, turn.begin.y, multiverse.state.border);
     multiverse.MakeRegularMove(turn, piece);
 }
 
-void f_BlackPromotionAndEnPassant(Game& multiverse, Turn turn) { //todo
+void f_BlackPromotionAndEnPassant(Game& multiverse, Move turn) { //todo
     uint8_t piece = multiverse.GetTimeline(turn.begin.l).GetBoard(turn.begin.t).GetSquare(turn.begin.x, turn.begin.y, multiverse.state.border);
     multiverse.MakeRegularMove(turn, piece);
 }

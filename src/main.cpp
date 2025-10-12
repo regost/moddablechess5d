@@ -33,7 +33,7 @@ int main()
     setup.Setup(a);
     a.SetTimeline(l0, Timeline::CreateTimelinePointer(500, 64, 0, Board::StartingPosition8x8));
     a.GetTimeline(l0).CreateNextTurnSamePointer();
-    Turn move;
+    Move move;
     move.SetStringTurn(a,"(0T1)d2d4",0);
     a.MakeMove(move);
     const string test = "game.txt";

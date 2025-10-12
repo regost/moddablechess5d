@@ -90,7 +90,7 @@ void GetY(XYTL& turn,const string& parse, size_t& i) {
 
 
 //todo use string_view
-Turn::Turn(const std::string parse, uint16_t primeTimeline, uint16_t NegativeTurns, uint16_t color)
+Move::Move(const std::string parse, uint16_t primeTimeline, uint16_t NegativeTurns, uint16_t color)
 {
 	size_t i = 0;//each Get function increases i   
 	//prime timeline is -0 or 0 , '+' increments the timeline var -2,-1,-0,+0,+1,+2 => -2,-1,0,1,2,3
@@ -114,14 +114,14 @@ Turn::Turn(const std::string parse, uint16_t primeTimeline, uint16_t NegativeTur
 
 
 
-Turn::Turn(uint8_t x1, uint8_t y1, uint16_t t1, uint16_t l1, uint8_t x2, uint8_t y2, uint16_t t2, uint16_t l2)
+Move::Move(uint8_t x1, uint8_t y1, uint16_t t1, uint16_t l1, uint8_t x2, uint8_t y2, uint16_t t2, uint16_t l2)
 {
 	begin.x = x1; begin.y = y1; begin.t = t1; begin.l = l1;
 	end.x = x2; end.y = y2; end.t = t2; end.l = l2;
 }
 
 
-void Turn::Print()
+void Move::Print()
 {
 	const string between = " ";
 	cout << "(" << int(begin.x) << between << int(begin.y) << between << begin.t << between << begin.l << between;
@@ -129,10 +129,10 @@ void Turn::Print()
 
 }
 
-void Turn::MakeMove(Game& chess) { chess.MakeMove(*this); }
-void Turn::UndoMove(Game& chess) { chess.UndoMove(*this); }
+void Move::MakeMove(Game& chess) { chess.MakeMove(*this); }
+void Move::UndoMove(Game& chess) { chess.UndoMove(*this); }
 
-void Turn::GetString(Game& chess, string& str)
+void Move::GetString(Game& chess, string& str)
 {
 	SetTimelineAndTurn(str, chess, this->begin);
 	SetPiece(str, chess, this->begin);
@@ -153,7 +153,7 @@ void Turn::GetString(Game& chess, string& str)
 	SetXY(str, this->end);
 }
 
-void Turn::SetStringTurn(Game& chess,const string& parse, uint16_t color)
+void Move::SetStringTurn(Game& chess,const string& parse, uint16_t color)
 {
 	//(0T2)Nf3>>(0T1)f5
 	size_t i = 0;//each Get function increases i   
@@ -180,11 +180,11 @@ void Turn::SetStringTurn(Game& chess,const string& parse, uint16_t color)
 
 }
 
-bool Turn::operator==(Turn& r_value)
+bool Move::operator==(Move& r_value)
 {
 	return (this->begin == r_value.begin) && (this->end == r_value.end);
 }
 
-bool Turn::isEqual(Turn& r_value) {
+bool Move::isEqual(Move& r_value) {
 	return *this == r_value;
 }

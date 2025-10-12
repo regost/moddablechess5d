@@ -6,23 +6,23 @@
 #include "Game.h"
 #include <stdint.h>
 
-struct Turn;
+struct Move;
 class Game;
 struct MoveSet;
 struct XYTL;
 class LoadPgn;
 
-template<typename Turn> struct ActionAndString;
+template<typename Move> struct ActionAndString;
 template <typename T> class Node;
 
 
 class ScrollableGame : public Game
 {
 public:
-	Node<Turn>* primeNode;
-	Node<Turn>* currentNode;
+	Node<Move>* primeNode;
+	Node<Move>* currentNode;
 
-	vector<ActionAndString<Turn>>::iterator currentMove;
+	vector<ActionAndString<Move>>::iterator currentMove;
 	size_t NextMoveIndex = 0;
 
 	void SetNotation(string path);
@@ -33,7 +33,7 @@ public:
 	void PreviousMove();
 	void UndoSubmitInNotation();//undo submit in a tree rename
 	void SubmitInNotation();//submit in a tree rename
-	void WriteMoveOrFollow(Node<Turn>* movesetToWrite);
+	void WriteMoveOrFollow(Node<Move>* movesetToWrite);
 	void LoadFromPGN(const string& path);
 	void LoadFromDatabase(string& path);
 	void SaveAsDatabase(string& path);
@@ -42,12 +42,12 @@ public:
 
 	void PrintNextMove();
 private:
-	void MakeMoveAndIncrement(vector<ActionAndString<Turn>>::iterator& currentMove);
-	void UndoMoveAndDecrement(vector<ActionAndString<Turn>>::iterator& currentMove);
-	void MakeAllMovesAndSetEnd(vector<ActionAndString<Turn>>& moveset, vector<ActionAndString<Turn>>::iterator& currentMove);
-	void UndoAllMovesAndSetBegin(vector<ActionAndString<Turn>>& moveset, vector<ActionAndString<Turn>>::iterator& currentMove);
-	static void SetIteratorEnd(vector<ActionAndString<Turn>>& moveset, vector<ActionAndString<Turn>>::iterator& currentMove);
-	static void SetIteratorBegin(vector<ActionAndString<Turn>>& moveset, vector<ActionAndString<Turn>>::iterator& currentMove);
+	void MakeMoveAndIncrement(vector<ActionAndString<Move>>::iterator& currentMove);
+	void UndoMoveAndDecrement(vector<ActionAndString<Move>>::iterator& currentMove);
+	void MakeAllMovesAndSetEnd(vector<ActionAndString<Move>>& moveset, vector<ActionAndString<Move>>::iterator& currentMove);
+	void UndoAllMovesAndSetBegin(vector<ActionAndString<Move>>& moveset, vector<ActionAndString<Move>>::iterator& currentMove);
+	static void SetIteratorEnd(vector<ActionAndString<Move>>& moveset, vector<ActionAndString<Move>>::iterator& currentMove);
+	static void SetIteratorBegin(vector<ActionAndString<Move>>& moveset, vector<ActionAndString<Move>>::iterator& currentMove);
 
 
 
