@@ -7,12 +7,13 @@
 #include "VConstructor.h"
 #include "Board.h"
 
-Timeline*& Game::GetTimelines() {
-	return *this->multiverse;
-}
 
 Timeline& Game::GetTimeline(uint16_t l)
 {
+	//will be refactored later
+	if(this->multiverse[l] == nullptr){
+		this->multiverse[l] = new Timeline();
+	}
     return *this->multiverse[l];
 }
 
@@ -275,35 +276,35 @@ void Game::UndoMoveSet(vector<Turn>& toMove, vector<Turn>::iterator& currentMove
 	UndoMoveSet(toMove, currentMove, Game::_fBlackUndoTravel);
 }
 
-void WhiteUndoTravel(Game& multiverse, Turn& toMove) {
-	multiverse.multiverse[multiverse.state.WhiteTimelinesBorder.InactiveTimelines]->UndoTurn();
-	if (!(multiverse.state.TimelineBalance > multiverse.state.MaxActiveTimelineDifference)) {
-		++multiverse.state.WhiteTimelinesBorder.ActiveTimelines;
+void WhiteUndoTravel(Game& chess, Turn& toMove) {
+	chess.GetTimeline(chess.state.WhiteTimelinesBorder.InactiveTimelines).UndoTurn();
+	if (!(chess.state.TimelineBalance > chess.state.MaxActiveTimelineDifference)) {
+		++chess.state.WhiteTimelinesBorder.ActiveTimelines;
 	}
-	if (multiverse.state.TimelineBalance <= -multiverse.state.MaxActiveTimelineDifference) {
-		--multiverse.state.BlackTimelinesBorder.ActiveTimelines;
+	if (chess.state.TimelineBalance <= -chess.state.MaxActiveTimelineDifference) {
+		--chess.state.BlackTimelinesBorder.ActiveTimelines;
 	}
-	--multiverse.state.TimelineBalance;
-	++multiverse.state.WhiteTimelinesBorder.InactiveTimelines;
+	--chess.state.TimelineBalance;
+	++chess.state.WhiteTimelinesBorder.InactiveTimelines;
 
-	multiverse.state.ThePresent = multiverse.CalculateThePresent() | 1;//add 1 if even
-	++multiverse.state.ThePresent;
+	chess.state.ThePresent = chess.CalculateThePresent() | 1;//add 1 if even
+	++chess.state.ThePresent;
 }
 
-void BlackUndoTravel(Game& multiverse, Turn& toMove) {
-	multiverse.multiverse[multiverse.state.BlackTimelinesBorder.InactiveTimelines]->UndoTurn();
-	if (!(multiverse.state.TimelineBalance < -multiverse.state.MaxActiveTimelineDifference)) {
-		--multiverse.state.BlackTimelinesBorder.ActiveTimelines;
+void BlackUndoTravel(Game& chess, Turn& toMove) {
+	chess.GetTimeline(chess.state.BlackTimelinesBorder.InactiveTimelines).UndoTurn();
+	if (!(chess.state.TimelineBalance < -chess.state.MaxActiveTimelineDifference)) {
+		--chess.state.BlackTimelinesBorder.ActiveTimelines;
 	}
-	if (multiverse.state.TimelineBalance >= multiverse.state.MaxActiveTimelineDifference) {
-		++multiverse.state.WhiteTimelinesBorder.ActiveTimelines;
+	if (chess.state.TimelineBalance >= chess.state.MaxActiveTimelineDifference) {
+		++chess.state.WhiteTimelinesBorder.ActiveTimelines;
 	}
-	++multiverse.state.TimelineBalance;
-	--multiverse.state.BlackTimelinesBorder.InactiveTimelines;
+	++chess.state.TimelineBalance;
+	--chess.state.BlackTimelinesBorder.InactiveTimelines;
 
-	multiverse.state.ThePresent = multiverse.CalculateThePresent();
-	multiverse.state.ThePresent += multiverse.state.ThePresent & 1; // add one if odd
-	++multiverse.state.ThePresent;
+	chess.state.ThePresent = chess.CalculateThePresent();
+	chess.state.ThePresent += chess.state.ThePresent & 1; // add one if odd
+	++chess.state.ThePresent;
 
 }
 
@@ -313,14 +314,14 @@ function<void(Game& multiverse, Turn& toMove)> Game::_fBlackUndoTravel = BlackUn
 
 namespace canclick {
 	bool CanDefaultClick(Game& multiverse, XYTL click) {
-		const uint8_t piece = multiverse.multiverse[click.l]->GetBoard(click.t).GetSquare(click.x, click.y, multiverse.state.border);
+		const uint8_t piece = multiverse.GetTimeline(click.l).GetBoard(click.t).GetSquare(click.x, click.y, multiverse.state.border);
 		return piece != PieceType::Void
 			&& Piece::PieceArray[piece].color == multiverse.state.Move
 			&& (click.t & 1) == multiverse.GetState().Move
-			&& multiverse.multiverse[click.l]->GetCurrentTurn() == click.t;
+			&& multiverse.GetTimeline(click.l).GetCurrentTurn() == click.t;
 	}
 	bool CanDefaultMove(Game& multiverse, XYTL click) {
-		const uint8_t piece = multiverse.multiverse[click.l]->GetBoard(click.t).GetSquare(click.x, click.y, multiverse.state.border);
+		const uint8_t piece = multiverse.GetTimeline(click.l).GetBoard(click.t).GetSquare(click.x, click.y, multiverse.state.border);
 		return (piece == PieceType::Void || Piece::PieceArray[piece].color != multiverse.GetState().Move)
 			&& (click.t & 1) == multiverse.GetState().Move;
 	}
@@ -328,7 +329,7 @@ namespace canclick {
 namespace cansubmit {
 	bool CanDefaultSubmit(Game& chess) {
 		for (uint16_t l = chess.state.WhiteTimelinesBorder.ActiveTimelines; l <= chess.state.BlackTimelinesBorder.ActiveTimelines; ++l) {
-			if (chess.multiverse[l]->GetCurrentTurn() < chess.state.ThePresent) { return false; }
+			if (chess.GetTimeline(l).GetCurrentTurn() < chess.state.ThePresent) { return false; }
 		}
 		return true;
 	}

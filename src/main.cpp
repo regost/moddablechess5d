@@ -31,8 +31,8 @@ int main()
     ScrollableGame a(XYTL(8, 8, 512, 129), l0, l0, 2);
 
     setup.Setup(a);
-    a.multiverse[l0] = Timeline::CreateTimelinePointer(500, 64, 0, Board::StartingPosition8x8);
-    a.multiverse[l0]->CreateNextTurnSamePointer();
+    a.SetTimeline(l0, Timeline::CreateTimelinePointer(500, 64, 0, Board::StartingPosition8x8));
+    a.GetTimeline(l0).CreateNextTurnSamePointer();
     Turn move;
     move.SetStringTurn(a,"(0T1)d2d4",0);
     a.MakeMove(move);

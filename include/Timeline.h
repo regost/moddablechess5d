@@ -21,8 +21,6 @@ uint16_t currentTurn;//the present of current timeline
 uint16_t firstBoard;
 */
 
-//its already divided
-//std::pair<Timeline,char* data>
 class Timeline
 {
 public:
@@ -69,6 +67,7 @@ public:
 	uint16_t GetFirstBoardIndex();
 	uint16_t GetSize();
 	uint16_t GetCurrentTurn();
+
 
 	////////////////////////////////////////////////////////////
 	void SetCurrentTurn(uint16_t toSet);

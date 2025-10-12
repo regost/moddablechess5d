@@ -62,10 +62,10 @@ public:
 
 public:
 	Game(XYTL border, uint16_t WhiteBorder, uint16_t BlackBorder, uint16_t thePresent);
-public:
+private:
 	//timelines use state to be on range
 	Timeline** multiverse;
-
+public:
 	//vector of pieces
 	vector<Piece> pieces;//todo
 	
@@ -89,17 +89,15 @@ public:
 public:
 	size_t GetBoardSize();
 	GameState& GetState();
-	Timeline*& GetTimelines();
 
 	Timeline& GetTimeline(uint16_t l);
+	void SetTimeline(uint16_t l, Timeline* toSet);
 
 	uint8_t GetPiece(XYTL& coordinates);
 
 	Piece& GetPieceAddress(uint8_t piece);
 	Piece& GetPieceAddress(XYTL& click);
 
-	
-	void SetTimeline(uint16_t l, Timeline* toSet);
 	//void SetBoard(uint16_t l, uint16_t t, Board toSet);
 	//void SetPiece(XYTL coordinates, uint8_t toSetPiece);
 

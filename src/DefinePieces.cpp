@@ -34,43 +34,44 @@ void f_RegularMove(Game& multiverse, Turn turn) {
     multiverse.MakeRegularMove(turn);
 }
 void f_TurnIntoMovedPiece(Game& multiverse, Turn turn) { // pawn -> moved pawn
-    uint8_t piece = multiverse.multiverse[turn.begin.l]->GetBoard(turn.begin.t).GetSquare(turn.begin.x, turn.begin.y, multiverse.state.border);
+    
+    uint8_t piece = multiverse.GetTimeline(turn.begin.l).GetBoard(turn.begin.t).GetSquare(turn.begin.x, turn.begin.y, multiverse.state.border);
     multiverse.MakeRegularMove(turn, piece + 2);
 }
 void f_BlackCastle(Game& multiverse, Turn turn) { //todo
-    uint8_t piece = multiverse.multiverse[turn.begin.l]->GetBoard(turn.begin.t).GetSquare(turn.begin.x, turn.begin.y, multiverse.state.border);
+    uint8_t piece = multiverse.GetTimeline(turn.begin.l).GetBoard(turn.begin.t).GetSquare(turn.begin.x, turn.begin.y, multiverse.state.border);
     multiverse.MakeRegularMove(turn, PieceType::BMovedKing);
 
     if (turn.end.x == 6) {
-        multiverse.multiverse[turn.end.l]->GetCurrentTurnBoard().SetSquare(PieceType::Void, multiverse.state.border.x - 1, multiverse.state.border.y - 1, multiverse.state.border);
-        multiverse.multiverse[turn.end.l]->GetCurrentTurnBoard().SetSquare(PieceType::BMovedRook, multiverse.state.border.x - 3, multiverse.state.border.y - 1, multiverse.state.border);
+        multiverse.GetTimeline(turn.end.l).GetCurrentTurnBoard().SetSquare(PieceType::Void, multiverse.state.border.x - 1, multiverse.state.border.y - 1, multiverse.state.border);
+        multiverse.GetTimeline(turn.end.l).GetCurrentTurnBoard().SetSquare(PieceType::BMovedRook, multiverse.state.border.x - 3, multiverse.state.border.y - 1, multiverse.state.border);
     }
     if (turn.end.x == 2) {
-        multiverse.multiverse[turn.end.l]->GetCurrentTurnBoard().SetSquare(PieceType::Void, 0, multiverse.state.border.y - 1, multiverse.state.border);
-        multiverse.multiverse[turn.end.l]->GetCurrentTurnBoard().SetSquare(PieceType::BMovedRook, 3, multiverse.state.border.y - 1, multiverse.state.border);
+        multiverse.GetTimeline(turn.end.l).GetCurrentTurnBoard().SetSquare(PieceType::Void, 0, multiverse.state.border.y - 1, multiverse.state.border);
+        multiverse.GetTimeline(turn.end.l).GetCurrentTurnBoard().SetSquare(PieceType::BMovedRook, 3, multiverse.state.border.y - 1, multiverse.state.border);
     }
 }
 void f_WhiteCastle(Game& multiverse, Turn turn) { //todo
 
-    uint8_t piece = multiverse.multiverse[turn.begin.l]->GetBoard(turn.begin.t).GetSquare(turn.begin.x, turn.begin.y, multiverse.state.border);
+    uint8_t piece = multiverse.GetTimeline(turn.begin.l).GetBoard(turn.begin.t).GetSquare(turn.begin.x, turn.begin.y, multiverse.state.border);
     multiverse.MakeRegularMove(turn, PieceType::WMovedKing);
     if (turn.end.x == 6) {
-        multiverse.multiverse[turn.end.l]->GetCurrentTurnBoard().SetSquare(PieceType::Void, multiverse.state.border.x - 1, 0, multiverse.state.border);
-        multiverse.multiverse[turn.end.l]->GetCurrentTurnBoard().SetSquare(PieceType::WMovedRook, multiverse.state.border.x - 3, 0, multiverse.state.border);
+        multiverse.GetTimeline(turn.end.l).GetCurrentTurnBoard().SetSquare(PieceType::Void, multiverse.state.border.x - 1, 0, multiverse.state.border);
+        multiverse.GetTimeline(turn.end.l).GetCurrentTurnBoard().SetSquare(PieceType::WMovedRook, multiverse.state.border.x - 3, 0, multiverse.state.border);
     }
     if (turn.end.x == 2) {
-        multiverse.multiverse[turn.end.l]->GetCurrentTurnBoard().SetSquare(PieceType::Void, 0, 0, multiverse.state.border);
-        multiverse.multiverse[turn.end.l]->GetCurrentTurnBoard().SetSquare(PieceType::WMovedRook, 3, 0, multiverse.state.border);
+        multiverse.GetTimeline(turn.end.l).GetCurrentTurnBoard().SetSquare(PieceType::Void, 0, 0, multiverse.state.border);
+        multiverse.GetTimeline(turn.end.l).GetCurrentTurnBoard().SetSquare(PieceType::WMovedRook, 3, 0, multiverse.state.border);
     }
 }
 
 void f_WhitePromotionAndEnPassant(Game& multiverse, Turn turn) { //todo
-    uint8_t piece = multiverse.multiverse[turn.begin.l]->GetBoard(turn.begin.t).GetSquare(turn.begin.x, turn.begin.y, multiverse.state.border);
+    uint8_t piece = multiverse.GetTimeline(turn.begin.l).GetBoard(turn.begin.t).GetSquare(turn.begin.x, turn.begin.y, multiverse.state.border);
     multiverse.MakeRegularMove(turn, piece);
 }
 
 void f_BlackPromotionAndEnPassant(Game& multiverse, Turn turn) { //todo
-    uint8_t piece = multiverse.multiverse[turn.begin.l]->GetBoard(turn.begin.t).GetSquare(turn.begin.x, turn.begin.y, multiverse.state.border);
+    uint8_t piece = multiverse.GetTimeline(turn.begin.l).GetBoard(turn.begin.t).GetSquare(turn.begin.x, turn.begin.y, multiverse.state.border);
     multiverse.MakeRegularMove(turn, piece);
 }
 

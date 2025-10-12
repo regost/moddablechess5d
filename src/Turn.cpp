@@ -138,7 +138,7 @@ void Turn::GetString(Game& chess, string& str)
 	SetPiece(str, chess, this->begin);
 	SetXY(str, this->begin);
 	bool isTravel, isBetweenTimelines;
-	isTravel = chess.multiverse[this->end.l]->GetCurrentTurn() != this->end.t;
+	isTravel = chess.GetTimeline(end.l).GetCurrentTurn() != this->end.t;
 	isBetweenTimelines = this->begin.l != this->end.l;
 
 	if (isTravel || isBetweenTimelines) {
