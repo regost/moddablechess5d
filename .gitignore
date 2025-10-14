@@ -1,0 +1,23 @@
+# Build directory
+build/
+
+# Executables
+*.exe
+*.out
+ModdableChess5D
+
+# CMake generated files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.cmake
+
+# IDE files
+.vscode/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
