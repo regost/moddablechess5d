@@ -112,8 +112,10 @@ Move::Move(const std::string& parse, uint16_t primeTimeline, uint16_t NegativeTu
 	GetY(this->end, parse, i);
 }
 
-
-
+Move::Move(Game &chess, const string &parse, uint16_t color)
+{
+	this->SetMoveByString(chess,parse,color);
+}
 
 Move::Move(uint8_t x1, uint8_t y1, uint16_t t1, uint16_t l1, uint8_t x2, uint8_t y2, uint16_t t2, uint16_t l2)
 {
@@ -154,7 +156,7 @@ void Move::GetString(Game& chess, string& str)
 	SetXY(str, this->end);
 }
 
-void Move::SetStringTurn(Game& chess,const string& parse, uint16_t color)
+void Move::SetMoveByString(Game& chess,const string& parse, uint16_t color)
 {
 	//(0T2)Nf3>>(0T1)f5
 	size_t i = 0;//each Get function increases i   

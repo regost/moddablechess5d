@@ -40,14 +40,15 @@ int main()
     
     a.GetTimeline(l0).CreateNextTurnSamePointer();
     Move move;
-    move.SetStringTurn(a,"(0T1)d2d4",0);
+    move.SetMoveByString(a,"(0T1)d2d4",0);
     Move move2;
-    move2.SetStringTurn(a,"(0T1)Ng8>>(0T0)g6",1);
+    move2.SetMoveByString(a,"(0T1)Ng8>>(0T0)g6",1);
     Move move3;
-    move3.SetStringTurn(a,"(-1T1)Ng1f3",0);
+    move3.SetMoveByString(a,"(-1T1)Ng1f3",0);
     a.MakeMove(move);
     a.MakeMove(move2);
     a.MakeMove(move3);
+
     const string test = "game.txt";
 
    
