@@ -1,0 +1,43 @@
+# Useful Commands for ModdableChess5D Project
+
+## Building and Running
+- Build the project: `cd build && make`
+- Run the executable: `./build/ModdableChess5D`
+- Clean build files: `cd build && make clean`
+- Rebuild from scratch: `cd build && rm -rf * && cmake .. && make`
+
+## File Operations
+- Rename a file (e.g., Turn.cpp to Move.cpp): `mv src/Turn.cpp src/Move.cpp`
+- Copy a file: `cp src/oldfile.cpp src/newfile.cpp`
+- Delete a file: `rm src/unwantedfile.cpp`
+- List files in src: `ls src/`
+- Find files by name: `find . -name "*.cpp"`
+
+## Code Search and Edit
+- Search for text in files: `grep -r "search_term" src/`
+- Search for function definitions: `grep -r "function_name" src/`
+- Count lines in a file: `wc -l src/main.cpp`
+
+## Git Operations
+- Check status: `git status`
+- Add changes: `git add .`
+- Commit changes: `git commit -m "Your message"`
+- Push to remote: `git push origin main`
+- Pull from remote: `git pull origin main`
+- View log: `git log --oneline`
+
+## CMake Specific
+- Generate build files: `cd build && cmake ..`
+- Update CMakeLists.txt after adding/removing files: Edit CMakeLists.txt, then `cd build && make`
+
+## Debugging
+- Run with gdb: `gdb ./build/ModdableChess5D`
+- Valgrind for memory leaks: `valgrind ./build/ModdableChess5D`
+
+## General Linux Commands
+- Change directory: `cd path/to/dir`
+- List directory: `ls -la`
+- Create directory: `mkdir newdir`
+- Remove directory: `rm -rf dir`
+- View file: `cat filename`
+- Edit file: `nano filename` or `vim filename`
