@@ -13,6 +13,14 @@
 - List files in src: `ls src/`
 - Find files by name: `find . -name "*.cpp"`
 
+## Renaming Files and Updating Includes
+- Rename a file and update all includes (e.g., rename Turn.h to Move.h and update #include statements):
+  `mv include/Turn.h include/Move.h && find . -name "*.cpp" -o -name "*.h" | xargs sed -i 's/#include "Turn\.h"/#include "Move.h"/g'`
+- For .cpp files (rarely included, but if needed):
+  `mv src/Turn.cpp src/Move.cpp && find . -name "*.cpp" -o -name "*.h" | xargs sed -i 's/#include "Turn\.cpp"/#include "Move.cpp"/g'`
+- General pattern: `find . -name "*.cpp" -o -name "*.h" | xargs sed -i 's/oldname/newname/g'`
+- After renaming files, update CMakeLists.txt if it doesn't use glob (edit manually or regenerate build files): `cd build && rm -rf * && cmake ..`
+
 ## Code Search and Edit
 - Search for text in files: `grep -r "search_term" src/`
 - Search for function definitions: `grep -r "function_name" src/`
