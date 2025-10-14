@@ -52,10 +52,10 @@ Board Game::CreateBoard(Board old, std::variant<Timeline*, Board> extra)
 	return newboard;
 }
 
-Timeline* Game::CreateTimeline(Timeline* old, std::variant<Timeline*, Board> extra)
+Timeline* Game::CreateTimeline(Timeline* old, Board extra)
 {
 	//const rawpointer newtimelineptr = reinterpret_cast<rawpointer>(newtimeline);
-	const size_t size = this->sizebytes[MULTIVERSE];
+	const size_t size = this->sizebytes[Game::TIMELINE];
 	rawpointer newtimelineptr = new char[size];
 	const rawpointer oldtimelineptr = reinterpret_cast<rawpointer>(old);
 
@@ -64,6 +64,8 @@ Timeline* Game::CreateTimeline(Timeline* old, std::variant<Timeline*, Board> ext
 	}
 
 	return reinterpret_cast<Timeline*>(newtimelineptr);
+
+	//Timeline* newtimeline = new Timeline();
 }
 
 void Game::CreateTimeline(Timeline &created, Timeline *old, Board extra)
@@ -133,23 +135,21 @@ Board Game::MakeTravelAndGetBoard(const Move& turn, const bool color)
 	if (color == ColorType::Black) {//Black
 		OnBlackCreatesTimeline(turn.end.t);
 
-		const Timeline& timeline = *multiverse[state.BlackTimelinesBorder.InactiveTimelines];
-		if (timeline == false) { 
+		if (multiverse[state.BlackTimelinesBorder.InactiveTimelines] == nullptr) {
 
 		#if not NEWTIMELINECONSTRUCTOR
 			Timeline* temp = new Timeline(this->state.border.t);//edited
-
-		#else 
+		#else
 			Timeline* temp = this->CreateTimeline(multiverse[turn.begin.l], board);
 			temp->AllocateMemory(TIMELINESIZEINBOARDS);
 		#endif
 
 			multiverse[state.BlackTimelinesBorder.InactiveTimelines] = temp;
 		}
-
 		multiverse[state.BlackTimelinesBorder.InactiveTimelines]->SetCurrentTurn(toSetTurn);
 		multiverse[state.BlackTimelinesBorder.InactiveTimelines]->SetIndexFirstBoard(toSetTurn);
 		multiverse[state.BlackTimelinesBorder.InactiveTimelines]->SetBoard(toSetTurn, board);
+
 		return board;
 	}
 
@@ -522,7 +522,8 @@ void Game::PrintPart(uint16_t max, uint16_t min)
 
 void Game::PrintLineBetweenTimelines(uint16_t t)
 {
-	uint16_t size = (multiverse[t]->GetCurrentTurn() + 1) * (this->state.border.x * 2 + 2) - 1;
+	const uint16_t shift = 1;
+	uint16_t size = (multiverse[t]->GetCurrentTurn() + 1 - shift) * (this->state.border.x * 2 + 2) - 1;
 	for (uint16_t i = 0; i < size; ++i) {
 		cout << '-';
 	}

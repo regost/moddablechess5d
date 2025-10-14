@@ -43,7 +43,5 @@ enum Info {
 	isRoyal = 1 << 3,//king, royal queen
 	isPawnType = 1 << 4,//pawn, useful for atomic chess
 	isCapturable = 1 << 5,//bedrock wall,duck arent
-	changesOnMove = 1 << 6,//pawn,rook,king -> moved pawn,moved rook,moved king 
-	hasRayMove = 1 << 7, //bishops, rooks, queens, and double step pawn's move counts as well
 };
 #endif

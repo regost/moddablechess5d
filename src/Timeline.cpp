@@ -91,7 +91,7 @@ void Timeline::CreateNextTurn(uint16_t Size,Game& chess)
 
 void Timeline::CreateNextTurnSamePointer() {
 	// has IncrementCurrentTurn();
-	if (currentTurn + 5 == size) { cout << "Stack Overflow";  return; } //todo throw or create a new array
+	if (currentTurn + 5 == size) { cout << "game is too long both players lost";  return; } //todo create a new array
 	Board temp = timeline[currentTurn];
 	IncrementCurrentTurn();
 	SetBoard(currentTurn, temp); //todo
@@ -115,7 +115,7 @@ uint16_t Timeline::GetCurrentTurn() { return this->currentTurn; }
 
 Board Timeline::GetCurrentTurnBoard() { 
 	if (this == nullptr) {
-		throw "nullptr";
+		throw "nullptr GetCurrentTurnBoard()";
 	}
 	return timeline[currentTurn]; 
 }
@@ -151,8 +151,10 @@ void Timeline::PrintTimeline(BorderBoard border)
 	cout << border.y << endl;
 
 	static const int RangeOfConsole = 13;
+
+	const uint16_t shift = 1;
 	for (int i = border.y - 1; i >= 0; --i) {
-		uint16_t j = 0; int printedBoards = 0;
+		uint16_t j = shift; int printedBoards = 0;
 		while (j <= currentTurn && printedBoards < RangeOfConsole) {
 			cout << "|";
 			if (GetBoard(j).IsNull()) {
@@ -165,7 +167,7 @@ void Timeline::PrintTimeline(BorderBoard border)
 			}
 			GetBoard(j).PrintRank(uint8_t(i), border);
 			cout << "|";
-			if (j % 2 == 0 && j != currentTurn) { cout << "*"; }
+			if (j % 2 == 1 && j != currentTurn) { cout << "*"; }
 			else { cout << " "; }
 			++j; ++printedBoards;
 		}

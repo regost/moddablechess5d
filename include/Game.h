@@ -62,9 +62,6 @@ public:
 
 public:
 	Game(XYTL border, uint16_t WhiteBorder, uint16_t BlackBorder, uint16_t thePresent);
-private:
-	//timelines use state to be on range
-	Timeline** multiverse;
 public:
 	//vector of pieces
 	vector<Piece> pieces;//todo
@@ -83,8 +80,9 @@ public:
 	GameState state;
 	//////////////////////////////////////////////////////////////////////////
 	Board CreateBoard(Board old, std::variant<Timeline*, Board> extra);
-	Timeline* CreateTimeline(Timeline* old, std::variant<Timeline*, Board> extra);
+	Timeline* CreateTimeline(Timeline* old, Board extra);
 
+	//will replace the other simular method
 	void CreateTimeline(Timeline& created, Timeline* old, Board extra);
 public:
 	size_t GetBoardSize();
@@ -115,18 +113,18 @@ public:
 	void Submit();
 	void UndoSubmit();
 
-	void MakeRegularMove(Move& toMove, uint8_t PieceToPlace); //makes a regular move but pawn rook becomes a moved rook
-	void MakeRegularMove(Move& toMove);//makes a regular move
-	void MakeMove(Move& toMove);//call a fuction from class piece
-	void MakeMoveSet(vector<Move>& toMove);
-	void MakeMoveSet(vector<Move>& toMove, vector<Move>::iterator& currentMove);
+	void MakeRegularMove(Move& move, uint8_t PieceToPlace); //makes a regular move but pawn rook becomes a moved rook
+	void MakeRegularMove(Move& move);//makes a regular move
+	void MakeMove(Move& move);//call a fuction from class piece
+	void MakeMoveSet(vector<Move>& moveset);
+	void MakeMoveSet(vector<Move>& moveset, vector<Move>::iterator& currentMove);
 
-	void UndoMove(Move& toMove);
-	void UndoMove(Move& toMove, function<void(Game& multiverse, Move& toMove)> undoTravel);
-	void UndoMoveSet(vector<Move>& toMove, function<void(Game& multiverse, Move& toMove)> undoTravel);
-	void UndoMoveSet(vector<Move>& toMove);
-	void UndoMoveSet(vector<Move>& toMove, vector<Move>::iterator& currentMoveSet);
-	void UndoMoveSet(vector<Move>& toMove, vector<Move>::iterator& currentMoveSet, function<void(Game& multiverse, Move& toMove)> undoTravel);
+	void UndoMove(Move& move);
+	void UndoMove(Move& move, function<void(Game& multiverse, Move& toMove)> undoTravel);
+	void UndoMoveSet(vector<Move>& moveset, function<void(Game& multiverse, Move& toMove)> undoTravel);
+	void UndoMoveSet(vector<Move>& moveset);
+	void UndoMoveSet(vector<Move>& moveset, vector<Move>::iterator& currentMoveset);
+	void UndoMoveSet(vector<Move>& moveset, vector<Move>::iterator& currentMoveset, function<void(Game& multiverse, Move& toMove)> undoTravel);
 
 	//void Delete(Board board);
 	//void Delete(Timeline* board);
@@ -136,12 +134,14 @@ public:
 	vector<CanClick> v_CanClick;
 	vector<function<bool(Game& multiverse)>> v_CanSubmit;
 	vector<function<bool(Game& multiverse)>> v_OnSubmit;
-
+	
+	//Timeline& operator[](int16_t timelineind);
 protected:
 
 
 
 private:
+	Timeline** multiverse;
 	void PrintPart(uint16_t max, uint16_t min);
 	void PrintLineBetweenTimelines(uint16_t t);
 	void NotTimeTravelMove(uint8_t setPieceAfterMove, Move& turn);

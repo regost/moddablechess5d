@@ -44,6 +44,7 @@ struct XYTL : XY
 	XYTL() = default;
 	XYTL(uint8_t x, uint8_t y, uint16_t t, uint16_t l) : XY(x, y) { this->t = t; this->l = l; }
 	uint16_t t;
+
 	//TODO should be int and add to the Game uint16_t shift
 	//so now i have t0 = 64 which is a bit wrong 
 	//coz when i am gonna expand (number of) timelines this is gonna fall apart
@@ -57,7 +58,7 @@ struct Move {
 	XYTL begin;
 	XYTL end;
 	Move(uint8_t x1, uint8_t y1, uint16_t t1, uint16_t l1, uint8_t x2, uint8_t y2, uint16_t t2, uint16_t l2);
-	Move(const std::string Parse, uint16_t primeTimeline, uint16_t NegativeTurns, uint16_t isBlackMove);
+	Move(const std::string& Parse, uint16_t primeTimeline, uint16_t NegativeTurns, uint16_t isBlackMove);
 	Move() = default;
 	~Move() = default;
 	bool operator==(Move& r_value);

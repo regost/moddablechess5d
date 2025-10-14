@@ -33,7 +33,7 @@ private:
 	uint16_t size; //example: 512  [white, black] * 256
 	uint16_t currentTurn;//the present of current timeline
 	uint16_t firstBoard;
-
+	int16_t ind;
 public:
 	//TODO this is gonna be used for modding
 	rawpointer extradata;

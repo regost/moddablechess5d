@@ -6,14 +6,16 @@
 #include <map>
 #include <set>
 
+//replace that with uint8_t + 'a'
 const map<char, uint8_t> transformChar = {
 	{'a',0} ,{'b',1} ,{'c',2} ,{'d',3},
 	{'e',4} ,{'f',5} ,{'g',6} ,{'h',7},
 	{'i',8}
-};//todo transform map to uint('a')
+};
 
 string letters = "abcdefghi";
 
+//use a better way char - '0' < 10
 const set<char> numberChars = { '0','1','2','3','4','5','6','7','8','9' };
 
 void SetTimelineAndTurn(string& strMove, Game& chess, XYTL& data) {
@@ -40,8 +42,7 @@ void FindChar(const string& parse, size_t& i, char toFind) {
 			return;
 		}
 	}
-	cout << "error FindChar";
-	throw;
+	throw "error in finding a char " + toFind;
 }
 
 
@@ -63,7 +64,7 @@ void GetT(XYTL& turn, const string& parse, uint16_t NumberOfNegativeTurns, uint1
 	size_t number = i;
 	FindChar(parse, i, ')');
 	turn.t = ((stoi(parse.substr(number, i - number)) + NumberOfNegativeTurns) << 1) + color;
-	turn.t -= 1;
+	//turn.t -= 1;
 
 	++i;
 }
@@ -90,7 +91,7 @@ void GetY(XYTL& turn,const string& parse, size_t& i) {
 
 
 //todo use string_view
-Move::Move(const std::string parse, uint16_t primeTimeline, uint16_t NegativeTurns, uint16_t color)
+Move::Move(const std::string& parse, uint16_t primeTimeline, uint16_t NegativeTurns, uint16_t color)
 {
 	size_t i = 0;//each Get function increases i   
 	//prime timeline is -0 or 0 , '+' increments the timeline var -2,-1,-0,+0,+1,+2 => -2,-1,0,1,2,3

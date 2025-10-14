@@ -1,12 +1,17 @@
 #include <iostream>
+#include <map>
 #include <stdint.h>
 #include <string>
+
 #include "Board.h"
+#include "HelperStructs.h"
 #include "ScrollableGame.h"
-#include "LoadPgn.h"
 #include "SetupGame.h"
 #include "VConstructor.h"
+#include "VConstructorClasses.h"
 #include "Timeline.h"
+
+using namespace std;
 
 enum {
     a = 0, b = 1, c = 2, d = 3, e = 4, f = 5, g = 6, h = 7,
@@ -31,11 +36,18 @@ int main()
     ScrollableGame a(XYTL(8, 8, 512, 129), l0, l0, 2);
 
     setup.Setup(a);
-    a.SetTimeline(l0, Timeline::CreateTimelinePointer(500, 64, 0, Board::StartingPosition8x8));
+    a.SetTimeline(l0, Timeline::CreateTimelinePointer(500, 64, 1, Board::StartingPosition8x8));
+    
     a.GetTimeline(l0).CreateNextTurnSamePointer();
     Move move;
     move.SetStringTurn(a,"(0T1)d2d4",0);
+    Move move2;
+    move2.SetStringTurn(a,"(0T1)Ng8>>(0T0)g6",1);
+    Move move3;
+    move3.SetStringTurn(a,"(-1T1)Ng1f3",0);
     a.MakeMove(move);
+    a.MakeMove(move2);
+    a.MakeMove(move3);
     const string test = "game.txt";
 
    

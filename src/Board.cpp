@@ -42,6 +42,9 @@ Board::Board(uint8_t* toCopy) {
 uint8_t Board::GetSquare(uint8_t x, uint8_t y, BorderBoard border) {
 
 	//cout << "x: " << int(x) << " y:" << int(y) << endl;
+	if(boardptr == nullptr){
+		throw "null pointer in GetSquare(uint8_t x, uint8_t y, BorderBoard border)";
+	}
 	return boardptr[y * border.y + x];
 }
 
