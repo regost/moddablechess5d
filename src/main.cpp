@@ -45,6 +45,8 @@ int main()
     a.NextMoveSet();
     a.NextMoveSet();
     a.NextMoveSet();
-
+    a.PreviousMoveSet();
+    a.PreviousMoveSet();
+    a.PreviousMoveSet();
     a.Print(); 
 }

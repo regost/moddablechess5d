@@ -53,10 +53,10 @@ struct XYTL : XY
 	bool operator==(XYTL& r_value);
 };
 
-//TODO it's a fucking Move not a Turn
 struct Move {
 	XYTL begin;
 	XYTL end;
+	bool travel = false;//TODO
 	Move(uint8_t x1, uint8_t y1, uint16_t t1, uint16_t l1, uint8_t x2, uint8_t y2, uint16_t t2, uint16_t l2);
 	Move(const std::string& Parse, uint16_t primeTimeline, uint16_t Tshift, uint16_t isBlackMove);
 	Move(Game& chess, const string& parse,uint16_t color);

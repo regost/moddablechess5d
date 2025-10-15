@@ -231,14 +231,7 @@ void Game::UndoMove(Move& move, function<void(Game& multiverse, Move& toMove)> u
 
 	if (move.begin.l != move.end.l) {
 		Timeline& endmovetimeline = *this->multiverse[move.end.l];
-		if (move.end.t != endmovetimeline.GetCurrentTurn() && endmovetimeline.GetBoard(move.end.t + 1).GetSquare(move.end.x, move.end.y, this->state.border) == 0) {
-
-			//temporal solution 
-			//todo add to the class turn with a bool variable which indicates was it a travel move
-			//and on move change that variable if move creates a timeline then in a makemove func 
-			//this bool variable is changed
-			//because if 2 moves are the same it doesnt mean that its possible to distinguish
-
+		if (move.travel) {
 			undoTravel(*this, move);
 		}
 		else {
@@ -400,17 +393,18 @@ bool Game::CanSubmit()
 
 
 
-void Game::MakeRegularMove(Move& toMove, uint8_t piece)//non-castle , non-en passant moves but you can turn the piece in moved piece (e2e4, 0-0)
+void Game::MakeRegularMove(Move& move, uint8_t piece)//non-castle , non-en passant moves but you can turn the piece in moved piece (e2e4, 0-0)
 {
-	if (multiverse[toMove.end.l]->GetCurrentTurn() == toMove.end.t) {
-		NotTimeTravelMove(piece, toMove);
+	if (multiverse[move.end.l]->GetCurrentTurn() == move.end.t) {
+		NotTimeTravelMove(piece, move);
 		return;
 	}
-	const bool isBlack = (toMove.begin.t & 1);//create multiverse.isBlack();
-	Board createdBoard = MakeTravelAndGetBoard(toMove, isBlack);
-	createdBoard.SetSquare(piece, toMove.end.x, toMove.end.y, state.border);
-	multiverse[toMove.begin.l]->CreateNextTurn(this->state.SizeBoard,*this);
-	multiverse[toMove.begin.l]->GetCurrentTurnBoard().SetSquare(0, toMove.begin.x, toMove.begin.y, state.border);
+	move.travel = true;
+	const bool isBlack = (move.begin.t & 1);//create multiverse.isBlack();
+	Board createdBoard = MakeTravelAndGetBoard(move, isBlack);
+	createdBoard.SetSquare(piece, move.end.x, move.end.y, state.border);
+	multiverse[move.begin.l]->CreateNextTurn(this->state.SizeBoard,*this);
+	multiverse[move.begin.l]->GetCurrentTurnBoard().SetSquare(0, move.begin.x, move.begin.y, state.border);
 }
 
 

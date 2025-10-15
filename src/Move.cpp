@@ -133,6 +133,11 @@ void Move::Print()
 
 }
 
+			//temporal solution 
+			//todo add to the class turn with a bool variable which indicates was it a travel move
+			//and on move change that variable if move creates a timeline then in a makemove func 
+			//this bool variable is changed
+			//because if 2 moves are the same it doesnt mean that its possible to distinguish
 void Move::MakeMove(Game& chess) { chess.MakeMove(*this); }
 void Move::UndoMove(Game& chess) { chess.UndoMove(*this); }
 
@@ -141,12 +146,11 @@ void Move::GetString(Game& chess, string& str)
 	SetTimelineAndTurn(str, chess, this->begin);
 	SetPiece(str, chess, this->begin);
 	SetXY(str, this->begin);
-	bool isTravel, isBetweenTimelines;
-	isTravel = chess.GetTimeline(end.l).GetCurrentTurn() != this->end.t;
+	bool isBetweenTimelines;
 	isBetweenTimelines = this->begin.l != this->end.l;
 
-	if (isTravel || isBetweenTimelines) {
-		if (isTravel) {
+	if (travel || isBetweenTimelines) {
+		if (travel) {
 			str += ">>";
 		}
 		else {
@@ -169,6 +173,10 @@ void Move::SetMoveByString(Game& chess,const string& parse, uint16_t color)
 	GetX(this->begin, parse, i);
 	GetY(this->begin, parse, i);
 	if (parse[i] == '>') {
+		++i;
+		if(parse[i] == '>'){
+			travel = true;
+		}
 		while (parse[i] != '(') { ++i; }
 		GetL(this->end, parse, chess.state.PrimeTimeline, i);
 		GetT(this->end, parse, chess.state.NumberOfNegativeTurns, color, i);
