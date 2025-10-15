@@ -35,8 +35,8 @@ public:
 	void SubmitInNotation();//submit in a tree rename
 	void WriteMoveOrFollow(Node<Move>* movesetToWrite);
 	void LoadFromPGN(const string& path);
-	void LoadFromDatabase(string& path);
-	void SaveAsDatabase(string& path);
+	void LoadFromDatabase(const string& path);
+	void SaveAsDatabase(const string& path);
 
 	ScrollableGame(XYTL border, uint16_t WhiteBorder, uint16_t BlackBorder, uint16_t thePresent);
 

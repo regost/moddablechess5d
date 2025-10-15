@@ -249,6 +249,30 @@ src/LoadPgn.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ModdableChess5D.dir/build.make CMakeFiles/ModdableChess5D.dir/src/LoadPgn.cpp.s
 .PHONY : src/LoadPgn.cpp.s
 
+src/Move.o: src/Move.cpp.o
+.PHONY : src/Move.o
+
+# target to build an object file
+src/Move.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ModdableChess5D.dir/build.make CMakeFiles/ModdableChess5D.dir/src/Move.cpp.o
+.PHONY : src/Move.cpp.o
+
+src/Move.i: src/Move.cpp.i
+.PHONY : src/Move.i
+
+# target to preprocess a source file
+src/Move.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ModdableChess5D.dir/build.make CMakeFiles/ModdableChess5D.dir/src/Move.cpp.i
+.PHONY : src/Move.cpp.i
+
+src/Move.s: src/Move.cpp.s
+.PHONY : src/Move.s
+
+# target to generate assembly for a file
+src/Move.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ModdableChess5D.dir/build.make CMakeFiles/ModdableChess5D.dir/src/Move.cpp.s
+.PHONY : src/Move.cpp.s
+
 src/Node.o: src/Node.cpp.o
 .PHONY : src/Node.o
 
@@ -369,30 +393,6 @@ src/Timeline.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ModdableChess5D.dir/build.make CMakeFiles/ModdableChess5D.dir/src/Timeline.cpp.s
 .PHONY : src/Timeline.cpp.s
 
-src/Turn.o: src/Turn.cpp.o
-.PHONY : src/Turn.o
-
-# target to build an object file
-src/Turn.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ModdableChess5D.dir/build.make CMakeFiles/ModdableChess5D.dir/src/Turn.cpp.o
-.PHONY : src/Turn.cpp.o
-
-src/Turn.i: src/Turn.cpp.i
-.PHONY : src/Turn.i
-
-# target to preprocess a source file
-src/Turn.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ModdableChess5D.dir/build.make CMakeFiles/ModdableChess5D.dir/src/Turn.cpp.i
-.PHONY : src/Turn.cpp.i
-
-src/Turn.s: src/Turn.cpp.s
-.PHONY : src/Turn.s
-
-# target to generate assembly for a file
-src/Turn.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ModdableChess5D.dir/build.make CMakeFiles/ModdableChess5D.dir/src/Turn.cpp.s
-.PHONY : src/Turn.cpp.s
-
 src/VConstructor.o: src/VConstructor.cpp.o
 .PHONY : src/VConstructor.o
 
@@ -489,6 +489,9 @@ help:
 	@echo "... src/LoadPgn.o"
 	@echo "... src/LoadPgn.i"
 	@echo "... src/LoadPgn.s"
+	@echo "... src/Move.o"
+	@echo "... src/Move.i"
+	@echo "... src/Move.s"
 	@echo "... src/Node.o"
 	@echo "... src/Node.i"
 	@echo "... src/Node.s"
@@ -504,9 +507,6 @@ help:
 	@echo "... src/Timeline.o"
 	@echo "... src/Timeline.i"
 	@echo "... src/Timeline.s"
-	@echo "... src/Turn.o"
-	@echo "... src/Turn.i"
-	@echo "... src/Turn.s"
 	@echo "... src/VConstructor.o"
 	@echo "... src/VConstructor.i"
 	@echo "... src/VConstructor.s"

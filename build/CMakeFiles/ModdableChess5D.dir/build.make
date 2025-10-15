@@ -139,10 +139,24 @@ CMakeFiles/ModdableChess5D.dir/src/LoadPgn.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ModdableChess5D.dir/src/LoadPgn.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/candy/projects/moddablechess5d/moddablechess5d/src/LoadPgn.cpp -o CMakeFiles/ModdableChess5D.dir/src/LoadPgn.cpp.s
 
+CMakeFiles/ModdableChess5D.dir/src/Move.cpp.o: CMakeFiles/ModdableChess5D.dir/flags.make
+CMakeFiles/ModdableChess5D.dir/src/Move.cpp.o: /home/candy/projects/moddablechess5d/moddablechess5d/src/Move.cpp
+CMakeFiles/ModdableChess5D.dir/src/Move.cpp.o: CMakeFiles/ModdableChess5D.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/candy/projects/moddablechess5d/moddablechess5d/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/ModdableChess5D.dir/src/Move.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ModdableChess5D.dir/src/Move.cpp.o -MF CMakeFiles/ModdableChess5D.dir/src/Move.cpp.o.d -o CMakeFiles/ModdableChess5D.dir/src/Move.cpp.o -c /home/candy/projects/moddablechess5d/moddablechess5d/src/Move.cpp
+
+CMakeFiles/ModdableChess5D.dir/src/Move.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ModdableChess5D.dir/src/Move.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/candy/projects/moddablechess5d/moddablechess5d/src/Move.cpp > CMakeFiles/ModdableChess5D.dir/src/Move.cpp.i
+
+CMakeFiles/ModdableChess5D.dir/src/Move.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ModdableChess5D.dir/src/Move.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/candy/projects/moddablechess5d/moddablechess5d/src/Move.cpp -o CMakeFiles/ModdableChess5D.dir/src/Move.cpp.s
+
 CMakeFiles/ModdableChess5D.dir/src/Node.cpp.o: CMakeFiles/ModdableChess5D.dir/flags.make
 CMakeFiles/ModdableChess5D.dir/src/Node.cpp.o: /home/candy/projects/moddablechess5d/moddablechess5d/src/Node.cpp
 CMakeFiles/ModdableChess5D.dir/src/Node.cpp.o: CMakeFiles/ModdableChess5D.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/candy/projects/moddablechess5d/moddablechess5d/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/ModdableChess5D.dir/src/Node.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/candy/projects/moddablechess5d/moddablechess5d/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/ModdableChess5D.dir/src/Node.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ModdableChess5D.dir/src/Node.cpp.o -MF CMakeFiles/ModdableChess5D.dir/src/Node.cpp.o.d -o CMakeFiles/ModdableChess5D.dir/src/Node.cpp.o -c /home/candy/projects/moddablechess5d/moddablechess5d/src/Node.cpp
 
 CMakeFiles/ModdableChess5D.dir/src/Node.cpp.i: cmake_force
@@ -156,7 +170,7 @@ CMakeFiles/ModdableChess5D.dir/src/Node.cpp.s: cmake_force
 CMakeFiles/ModdableChess5D.dir/src/Piece.cpp.o: CMakeFiles/ModdableChess5D.dir/flags.make
 CMakeFiles/ModdableChess5D.dir/src/Piece.cpp.o: /home/candy/projects/moddablechess5d/moddablechess5d/src/Piece.cpp
 CMakeFiles/ModdableChess5D.dir/src/Piece.cpp.o: CMakeFiles/ModdableChess5D.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/candy/projects/moddablechess5d/moddablechess5d/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/ModdableChess5D.dir/src/Piece.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/candy/projects/moddablechess5d/moddablechess5d/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/ModdableChess5D.dir/src/Piece.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ModdableChess5D.dir/src/Piece.cpp.o -MF CMakeFiles/ModdableChess5D.dir/src/Piece.cpp.o.d -o CMakeFiles/ModdableChess5D.dir/src/Piece.cpp.o -c /home/candy/projects/moddablechess5d/moddablechess5d/src/Piece.cpp
 
 CMakeFiles/ModdableChess5D.dir/src/Piece.cpp.i: cmake_force
@@ -170,7 +184,7 @@ CMakeFiles/ModdableChess5D.dir/src/Piece.cpp.s: cmake_force
 CMakeFiles/ModdableChess5D.dir/src/ScrollableGame.cpp.o: CMakeFiles/ModdableChess5D.dir/flags.make
 CMakeFiles/ModdableChess5D.dir/src/ScrollableGame.cpp.o: /home/candy/projects/moddablechess5d/moddablechess5d/src/ScrollableGame.cpp
 CMakeFiles/ModdableChess5D.dir/src/ScrollableGame.cpp.o: CMakeFiles/ModdableChess5D.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/candy/projects/moddablechess5d/moddablechess5d/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/ModdableChess5D.dir/src/ScrollableGame.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/candy/projects/moddablechess5d/moddablechess5d/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/ModdableChess5D.dir/src/ScrollableGame.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ModdableChess5D.dir/src/ScrollableGame.cpp.o -MF CMakeFiles/ModdableChess5D.dir/src/ScrollableGame.cpp.o.d -o CMakeFiles/ModdableChess5D.dir/src/ScrollableGame.cpp.o -c /home/candy/projects/moddablechess5d/moddablechess5d/src/ScrollableGame.cpp
 
 CMakeFiles/ModdableChess5D.dir/src/ScrollableGame.cpp.i: cmake_force
@@ -184,7 +198,7 @@ CMakeFiles/ModdableChess5D.dir/src/ScrollableGame.cpp.s: cmake_force
 CMakeFiles/ModdableChess5D.dir/src/SetupGame.cpp.o: CMakeFiles/ModdableChess5D.dir/flags.make
 CMakeFiles/ModdableChess5D.dir/src/SetupGame.cpp.o: /home/candy/projects/moddablechess5d/moddablechess5d/src/SetupGame.cpp
 CMakeFiles/ModdableChess5D.dir/src/SetupGame.cpp.o: CMakeFiles/ModdableChess5D.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/candy/projects/moddablechess5d/moddablechess5d/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/ModdableChess5D.dir/src/SetupGame.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/candy/projects/moddablechess5d/moddablechess5d/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/ModdableChess5D.dir/src/SetupGame.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ModdableChess5D.dir/src/SetupGame.cpp.o -MF CMakeFiles/ModdableChess5D.dir/src/SetupGame.cpp.o.d -o CMakeFiles/ModdableChess5D.dir/src/SetupGame.cpp.o -c /home/candy/projects/moddablechess5d/moddablechess5d/src/SetupGame.cpp
 
 CMakeFiles/ModdableChess5D.dir/src/SetupGame.cpp.i: cmake_force
@@ -198,7 +212,7 @@ CMakeFiles/ModdableChess5D.dir/src/SetupGame.cpp.s: cmake_force
 CMakeFiles/ModdableChess5D.dir/src/Timeline.cpp.o: CMakeFiles/ModdableChess5D.dir/flags.make
 CMakeFiles/ModdableChess5D.dir/src/Timeline.cpp.o: /home/candy/projects/moddablechess5d/moddablechess5d/src/Timeline.cpp
 CMakeFiles/ModdableChess5D.dir/src/Timeline.cpp.o: CMakeFiles/ModdableChess5D.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/candy/projects/moddablechess5d/moddablechess5d/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/ModdableChess5D.dir/src/Timeline.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/candy/projects/moddablechess5d/moddablechess5d/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/ModdableChess5D.dir/src/Timeline.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ModdableChess5D.dir/src/Timeline.cpp.o -MF CMakeFiles/ModdableChess5D.dir/src/Timeline.cpp.o.d -o CMakeFiles/ModdableChess5D.dir/src/Timeline.cpp.o -c /home/candy/projects/moddablechess5d/moddablechess5d/src/Timeline.cpp
 
 CMakeFiles/ModdableChess5D.dir/src/Timeline.cpp.i: cmake_force
@@ -208,20 +222,6 @@ CMakeFiles/ModdableChess5D.dir/src/Timeline.cpp.i: cmake_force
 CMakeFiles/ModdableChess5D.dir/src/Timeline.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ModdableChess5D.dir/src/Timeline.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/candy/projects/moddablechess5d/moddablechess5d/src/Timeline.cpp -o CMakeFiles/ModdableChess5D.dir/src/Timeline.cpp.s
-
-CMakeFiles/ModdableChess5D.dir/src/Turn.cpp.o: CMakeFiles/ModdableChess5D.dir/flags.make
-CMakeFiles/ModdableChess5D.dir/src/Turn.cpp.o: /home/candy/projects/moddablechess5d/moddablechess5d/src/Turn.cpp
-CMakeFiles/ModdableChess5D.dir/src/Turn.cpp.o: CMakeFiles/ModdableChess5D.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/candy/projects/moddablechess5d/moddablechess5d/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/ModdableChess5D.dir/src/Turn.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ModdableChess5D.dir/src/Turn.cpp.o -MF CMakeFiles/ModdableChess5D.dir/src/Turn.cpp.o.d -o CMakeFiles/ModdableChess5D.dir/src/Turn.cpp.o -c /home/candy/projects/moddablechess5d/moddablechess5d/src/Turn.cpp
-
-CMakeFiles/ModdableChess5D.dir/src/Turn.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ModdableChess5D.dir/src/Turn.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/candy/projects/moddablechess5d/moddablechess5d/src/Turn.cpp > CMakeFiles/ModdableChess5D.dir/src/Turn.cpp.i
-
-CMakeFiles/ModdableChess5D.dir/src/Turn.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ModdableChess5D.dir/src/Turn.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/candy/projects/moddablechess5d/moddablechess5d/src/Turn.cpp -o CMakeFiles/ModdableChess5D.dir/src/Turn.cpp.s
 
 CMakeFiles/ModdableChess5D.dir/src/VConstructor.cpp.o: CMakeFiles/ModdableChess5D.dir/flags.make
 CMakeFiles/ModdableChess5D.dir/src/VConstructor.cpp.o: /home/candy/projects/moddablechess5d/moddablechess5d/src/VConstructor.cpp
@@ -272,12 +272,12 @@ ModdableChess5D_OBJECTS = \
 "CMakeFiles/ModdableChess5D.dir/src/Game.cpp.o" \
 "CMakeFiles/ModdableChess5D.dir/src/HelperStructs.cpp.o" \
 "CMakeFiles/ModdableChess5D.dir/src/LoadPgn.cpp.o" \
+"CMakeFiles/ModdableChess5D.dir/src/Move.cpp.o" \
 "CMakeFiles/ModdableChess5D.dir/src/Node.cpp.o" \
 "CMakeFiles/ModdableChess5D.dir/src/Piece.cpp.o" \
 "CMakeFiles/ModdableChess5D.dir/src/ScrollableGame.cpp.o" \
 "CMakeFiles/ModdableChess5D.dir/src/SetupGame.cpp.o" \
 "CMakeFiles/ModdableChess5D.dir/src/Timeline.cpp.o" \
-"CMakeFiles/ModdableChess5D.dir/src/Turn.cpp.o" \
 "CMakeFiles/ModdableChess5D.dir/src/VConstructor.cpp.o" \
 "CMakeFiles/ModdableChess5D.dir/src/VConstructorClasses.cpp.o" \
 "CMakeFiles/ModdableChess5D.dir/src/main.cpp.o"
@@ -290,12 +290,12 @@ ModdableChess5D: CMakeFiles/ModdableChess5D.dir/src/DefinePieces.cpp.o
 ModdableChess5D: CMakeFiles/ModdableChess5D.dir/src/Game.cpp.o
 ModdableChess5D: CMakeFiles/ModdableChess5D.dir/src/HelperStructs.cpp.o
 ModdableChess5D: CMakeFiles/ModdableChess5D.dir/src/LoadPgn.cpp.o
+ModdableChess5D: CMakeFiles/ModdableChess5D.dir/src/Move.cpp.o
 ModdableChess5D: CMakeFiles/ModdableChess5D.dir/src/Node.cpp.o
 ModdableChess5D: CMakeFiles/ModdableChess5D.dir/src/Piece.cpp.o
 ModdableChess5D: CMakeFiles/ModdableChess5D.dir/src/ScrollableGame.cpp.o
 ModdableChess5D: CMakeFiles/ModdableChess5D.dir/src/SetupGame.cpp.o
 ModdableChess5D: CMakeFiles/ModdableChess5D.dir/src/Timeline.cpp.o
-ModdableChess5D: CMakeFiles/ModdableChess5D.dir/src/Turn.cpp.o
 ModdableChess5D: CMakeFiles/ModdableChess5D.dir/src/VConstructor.cpp.o
 ModdableChess5D: CMakeFiles/ModdableChess5D.dir/src/VConstructorClasses.cpp.o
 ModdableChess5D: CMakeFiles/ModdableChess5D.dir/src/main.cpp.o

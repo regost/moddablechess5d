@@ -5,7 +5,7 @@
 - Run the executable: `./build/ModdableChess5D`
 - Clean build files: `cd build && make clean`
 - Rebuild from scratch: `cd build && rm -rf * && cmake .. && make`
-
+rm -rf * && cmake .. && make
 ## File Operations
 - Rename a file (e.g., Turn.cpp to Move.cpp): `mv src/Turn.cpp src/Move.cpp`
 - Copy a file: `cp src/oldfile.cpp src/newfile.cpp`

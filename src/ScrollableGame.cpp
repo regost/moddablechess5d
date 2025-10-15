@@ -50,12 +50,13 @@ void ScrollableGame::PreviousMoveSet() {
 
 
 void ScrollableGame::NextMove() {
-	cout << "isnt implemented";
+
+	cout << "NextMove() isnt implemented";
 }
 
 
 void ScrollableGame::PreviousMove() {
-	cout << "isnt implemented";
+	cout << "NextMove() isnt implemented";
 }
 
 
@@ -96,12 +97,12 @@ void ScrollableGame::LoadFromPGN(const string& path)
 	LoadPgn::ParsePNGfile(this->primeNode, path, this->state.PrimeTimeline, this->state.NumberOfNegativeTurns);
 }
 
-void ScrollableGame::LoadFromDatabase(string& path)
+void ScrollableGame::LoadFromDatabase(const string& path)
 {
 	this->primeNode->Load(path, *this);
 }
 
-void ScrollableGame::SaveAsDatabase(string& path)
+void ScrollableGame::SaveAsDatabase(const string& path)
 {
 	this->primeNode->Save(path);
 }

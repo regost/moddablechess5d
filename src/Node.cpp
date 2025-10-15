@@ -4,6 +4,7 @@
 #include <vector>
 #include <stack>
 #include <iostream>
+#include <fstream>  
 #include "HelperStructs.h"
 
 using namespace std;
@@ -26,8 +27,8 @@ public:
 	void SetNext(vector<ActionAndString<T>>*& moveset);
 	void AddAndSetLast(Node<T>* node);
 	void WriteOrFollow(Node<T>*& toadd);
-	void Save(string& path);
-	void Load(string& path, Game& chess);
+	void Save(const string& path);
+	void Load(const string& path, Game& chess);
 	void Print();
 	void Delete(size_t ind);
 private:
@@ -173,7 +174,7 @@ template<typename T> void Node<T>::SetNext(vector<ActionAndString<T>>*& data) {
 
 
 template<typename T>
-void Node<T>::Save(string& path)
+void Node<T>::Save(const string& path)
 {
 	stack<FunctionData<T>> Stack;
 	FunctionData<T> firstElement;
@@ -186,7 +187,19 @@ void Node<T>::Save(string& path)
 
 	ofstream file;
 	file.open(path);
-	if (!file.is_open()) { cout << "error opening file!"; return; }
+
+	if (!file.is_open()) { 
+		std::ofstream outfile (path);
+		outfile.close();
+		file.open(path);
+	}
+	if(!file.is_open()){
+		cout <<"cant open the file";
+		return;
+	}
+
+
+	
 	file.clear();
 	while (!Stack.empty()) {
 		if (Stack.top().current == Stack.top().node->vectorOfNodes.end()) {
@@ -210,12 +223,12 @@ void Node<T>::Save(string& path)
 		++Stack.top().current;
 		Stack.push(Element);
 	}
-	file << "0\n";
+	file << "\n";
 
 }
 //struct TurnString;
 template<typename T>
-void Node<T>::Load(string& path, Game& chess)
+void Node<T>::Load(const string& path, Game& chess)
 {
 
 	fstream file; string line;
