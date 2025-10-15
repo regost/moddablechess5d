@@ -81,13 +81,9 @@ void Board::PrintBoard(BorderBoard border)
 
 Board::operator rawpointer()
 {
-	return reinterpret_cast<rawpointer>(this);
+	return reinterpret_cast<rawpointer>(this->boardptr);
 }
 
-//Board::operator rawpointer()
-//{
-//	//return static_cast<char*>(this);
-//}
 
 void Board::SetNull() { this->boardptr = nullptr; }
 bool Board::IsNull() { return this->boardptr == nullptr; }

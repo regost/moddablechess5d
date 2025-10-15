@@ -41,9 +41,10 @@ int main()
     a.GetTimeline(l0).CreateNextTurnSamePointer();
     
     a.LoadFromDatabase("game1.txt");
-    a.NextMoveSet();
-    a.NextMoveSet();
-    a.NextMoveSet();
     
+    a.NextMoveSet();
+    a.NextMoveSet();
+    a.NextMoveSet();
+
     a.Print(); 
 }
