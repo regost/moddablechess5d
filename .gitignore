@@ -6,6 +6,9 @@ build/
 *.out
 ModdableChess5D
 
+# Object files
+*.o
+
 # CMake generated files
 CMakeCache.txt
 CMakeFiles/
