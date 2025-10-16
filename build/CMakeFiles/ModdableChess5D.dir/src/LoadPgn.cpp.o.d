@@ -183,6 +183,7 @@ CMakeFiles/ModdableChess5D.dir/src/LoadPgn.cpp.o: \
  /usr/include/c++/13/bits/parse_numbers.h \
  /home/candy/projects/moddablechess5d/moddablechess5d/include/usingnames.h \
  /home/candy/projects/moddablechess5d/moddablechess5d/include/DataGame.h \
+ /home/candy/projects/moddablechess5d/moddablechess5d/include/Enum.h \
  /home/candy/projects/moddablechess5d/moddablechess5d/include/HelperStructs.h \
  /usr/include/c++/13/algorithm \
  /usr/include/c++/13/pstl/glue_algorithm_defs.h \

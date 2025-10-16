@@ -6,7 +6,7 @@
 
 #include <iostream>
 #include <stdint.h>
-
+#include "Enum.h"
 using namespace std;
 
 struct XY;
@@ -57,7 +57,7 @@ struct GameState {
 	uint16_t NumberOfNegativeTurns = 0;//to parse the png
 	uint16_t PrimeTimeline;//if there are +0 and -0 then -0 is a prime timeline
 	uint8_t IsGameEnded = 0;
-	bool Move = false; // false - white's turn , true - black's turn
+	bool Move = Color::WHITE; // false - white's turn , true - black's turn
 	bool Submit = false;
 	GameState() = default;
 	void print() {

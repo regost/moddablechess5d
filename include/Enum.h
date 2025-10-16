@@ -1,9 +1,27 @@
-namespace ColorType {
-	enum {
-		Black = true,
-		White = false
-	};
-}
+#pragma once
+
+#ifndef _ENUM_H_
+#define _ENUM_H_
+
+class Color {
+public:
+    enum : bool {
+        WHITE = 0,
+        BLACK = 1
+    };
+
+    bool value;
+
+    Color(bool v = WHITE) : value(v) {}
+
+    operator bool() const {
+        return value == BLACK;
+    }
+
+    bool operator==(bool other) const {
+        return value == other;
+    }
+};
 
 namespace PieceType {
 	enum pieceEnum {
@@ -14,4 +32,6 @@ namespace PieceType {
 		Void = 0
 	};
 }
+
+#endif
 

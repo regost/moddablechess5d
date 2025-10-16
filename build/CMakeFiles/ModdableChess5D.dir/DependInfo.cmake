@@ -21,6 +21,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/candy/projects/moddablechess5d/moddablechess5d/src/Timeline.cpp" "CMakeFiles/ModdableChess5D.dir/src/Timeline.cpp.o" "gcc" "CMakeFiles/ModdableChess5D.dir/src/Timeline.cpp.o.d"
   "/home/candy/projects/moddablechess5d/moddablechess5d/src/VConstructor.cpp" "CMakeFiles/ModdableChess5D.dir/src/VConstructor.cpp.o" "gcc" "CMakeFiles/ModdableChess5D.dir/src/VConstructor.cpp.o.d"
   "/home/candy/projects/moddablechess5d/moddablechess5d/src/VConstructorClasses.cpp" "CMakeFiles/ModdableChess5D.dir/src/VConstructorClasses.cpp.o" "gcc" "CMakeFiles/ModdableChess5D.dir/src/VConstructorClasses.cpp.o.d"
+  "/home/candy/projects/moddablechess5d/moddablechess5d/src/VirtualMove.cpp" "CMakeFiles/ModdableChess5D.dir/src/VirtualMove.cpp.o" "gcc" "CMakeFiles/ModdableChess5D.dir/src/VirtualMove.cpp.o.d"
   "/home/candy/projects/moddablechess5d/moddablechess5d/src/main.cpp" "CMakeFiles/ModdableChess5D.dir/src/main.cpp.o" "gcc" "CMakeFiles/ModdableChess5D.dir/src/main.cpp.o.d"
   )
 

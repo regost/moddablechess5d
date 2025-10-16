@@ -441,6 +441,30 @@ src/VConstructorClasses.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ModdableChess5D.dir/build.make CMakeFiles/ModdableChess5D.dir/src/VConstructorClasses.cpp.s
 .PHONY : src/VConstructorClasses.cpp.s
 
+src/VirtualMove.o: src/VirtualMove.cpp.o
+.PHONY : src/VirtualMove.o
+
+# target to build an object file
+src/VirtualMove.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ModdableChess5D.dir/build.make CMakeFiles/ModdableChess5D.dir/src/VirtualMove.cpp.o
+.PHONY : src/VirtualMove.cpp.o
+
+src/VirtualMove.i: src/VirtualMove.cpp.i
+.PHONY : src/VirtualMove.i
+
+# target to preprocess a source file
+src/VirtualMove.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ModdableChess5D.dir/build.make CMakeFiles/ModdableChess5D.dir/src/VirtualMove.cpp.i
+.PHONY : src/VirtualMove.cpp.i
+
+src/VirtualMove.s: src/VirtualMove.cpp.s
+.PHONY : src/VirtualMove.s
+
+# target to generate assembly for a file
+src/VirtualMove.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ModdableChess5D.dir/build.make CMakeFiles/ModdableChess5D.dir/src/VirtualMove.cpp.s
+.PHONY : src/VirtualMove.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -513,6 +537,9 @@ help:
 	@echo "... src/VConstructorClasses.o"
 	@echo "... src/VConstructorClasses.i"
 	@echo "... src/VConstructorClasses.s"
+	@echo "... src/VirtualMove.o"
+	@echo "... src/VirtualMove.i"
+	@echo "... src/VirtualMove.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

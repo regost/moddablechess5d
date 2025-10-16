@@ -5,21 +5,16 @@
 #include "Piece.h"
 #include "Board.h"
 #include "HelperStructs.h"
+#include "Enum.h"
 
-enum colorEnum {
+enum Royalty {
     Royal = true, NotRoyal = false
 };
 enum ColorType {
     White = true, Black = false
 };
 
-enum PieceType {
-    Void = 0,
-    BMovedKing = 17,
-    WMovedKing = 18,
-    BMovedRook = 7,
-    WMovedRook = 8
-};
+// Removed duplicate enum PieceType, using the one from Enum.h
 
 void f_VoidCanNotMove(Game& chess, Move turn) {
     cout << "void can not move, you must fix that error\n";
@@ -78,25 +73,25 @@ void f_BlackPromotionAndEnPassant(Game& multiverse, Move turn) { //todo
 
 Piece emptySquare(" ", " ", PieceType::Void, NotRoyal, f_VoidCanNotMove);
 
-Piece wPawn("P", "", ColorType::White, NotRoyal, f_TurnIntoMovedPiece);//en passant
-Piece wMovedPawn("P", "", ColorType::White, NotRoyal, f_WhitePromotionAndEnPassant);
-Piece wRook("R", "R", ColorType::White, NotRoyal, f_TurnIntoMovedPiece);
-Piece wMovedRook("R", "R", ColorType::White, NotRoyal, f_RegularMove);
-Piece wKnight("N", "N", ColorType::White, NotRoyal, f_RegularMove);
-Piece wBishop("B", "B", ColorType::White, NotRoyal, f_RegularMove);
-Piece wQueen("Q", "Q", ColorType::White, NotRoyal, f_RegularMove);
-Piece wKing("K", "K", ColorType::White, Royal, f_WhiteCastle);//add castle
-Piece wMovedKing("K", "K", ColorType::White, Royal, f_RegularMove);
+Piece wPawn("P", "", Color::WHITE, NotRoyal, f_TurnIntoMovedPiece);//en passant
+Piece wMovedPawn("P", "", Color::WHITE, NotRoyal, f_WhitePromotionAndEnPassant);
+Piece wRook("R", "R", Color::WHITE, NotRoyal, f_TurnIntoMovedPiece);
+Piece wMovedRook("R", "R", Color::WHITE, NotRoyal, f_RegularMove);
+Piece wKnight("N", "N", Color::WHITE, NotRoyal, f_RegularMove);
+Piece wBishop("B", "B", Color::WHITE, NotRoyal, f_RegularMove);
+Piece wQueen("Q", "Q", Color::WHITE, NotRoyal, f_RegularMove);
+Piece wKing("K", "K", Color::WHITE, Royal, f_WhiteCastle);//add castle
+Piece wMovedKing("K", "K", Color::WHITE, Royal, f_RegularMove);
 
-Piece bPawn("p", "", ColorType::Black, NotRoyal, f_TurnIntoMovedPiece);//en passant
-Piece bMovedPawn("p", "", ColorType::Black, NotRoyal, f_BlackPromotionAndEnPassant);
-Piece bRook("r", "R", ColorType::Black, NotRoyal, f_TurnIntoMovedPiece);
-Piece bMovedRook("r", "R", ColorType::Black, NotRoyal, f_RegularMove);
-Piece bKnight("n", "N", ColorType::Black, NotRoyal, f_RegularMove);
-Piece bBishop("b", "B", ColorType::Black, NotRoyal, f_RegularMove);
-Piece bQueen("q", "Q", ColorType::Black, NotRoyal, f_RegularMove);
-Piece bKing("k", "K", ColorType::Black, Royal, f_BlackCastle);//add castle
-Piece bMovedKing("k", "K", ColorType::Black, Royal, f_RegularMove);
+Piece bPawn("p", "", Color::BLACK, NotRoyal, f_TurnIntoMovedPiece);//en passant
+Piece bMovedPawn("p", "", Color::BLACK, NotRoyal, f_BlackPromotionAndEnPassant);
+Piece bRook("r", "R", Color::BLACK, NotRoyal, f_TurnIntoMovedPiece);
+Piece bMovedRook("r", "R", Color::BLACK, NotRoyal, f_RegularMove);
+Piece bKnight("n", "N", Color::BLACK, NotRoyal, f_RegularMove);
+Piece bBishop("b", "B", Color::BLACK, NotRoyal, f_RegularMove);
+Piece bQueen("q", "Q", Color::BLACK, NotRoyal, f_RegularMove);
+Piece bKing("k", "K", Color::BLACK, Royal, f_BlackCastle);//add castle
+Piece bMovedKing("k", "K", Color::BLACK, Royal, f_RegularMove);
 
 
 Piece Piece::PieceArray[19] = { emptySquare,

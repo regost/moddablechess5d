@@ -132,7 +132,7 @@ Board Game::MakeTravelAndGetBoard(const Move& turn, const bool color)
 		Board board = multiverse[turn.end.l]->GetBoard(turn.end.t).GetDeepCopy(this->state.SizeBoard);
 	#endif
 
-	if (color == ColorType::Black) {//Black
+	if (color == Color::BLACK) {//Black
 		OnBlackCreatesTimeline(turn.end.t);
 
 		if (multiverse[state.BlackTimelinesBorder.InactiveTimelines] == nullptr) {
@@ -195,7 +195,7 @@ void Game::MakeMoveSet(vector<Move>& toMove) {
 
 
 void Game::UndoMove(Move& toMove) {
-	if (state.Move == ColorType::Black) {
+	if (state.Move == Color::BLACK) {
 		UndoMove(toMove, Game::_fBlackUndoTravel);
 		return;
 	}
@@ -252,7 +252,7 @@ void Game::UndoMoveSet(vector<Move>& moveset, function<void(Game& multiverse, Mo
 void Game::UndoMoveSet(vector<Move>& toMove)
 {
 
-	if ((this->state.Move == ColorType::White)) {
+	if ((this->state.Move == Color::WHITE)) {
 		UndoMoveSet(toMove, Game::_fWhiteUndoTravel);
 		return;
 	}
@@ -262,7 +262,7 @@ void Game::UndoMoveSet(vector<Move>& toMove)
 
 void Game::UndoMoveSet(vector<Move>& toMove, vector<Move>::iterator& currentMove)
 {
-	if ((this->state.Move == ColorType::White)) {
+	if ((this->state.Move == Color::WHITE)) {
 		UndoMoveSet(toMove, currentMove, Game::_fWhiteUndoTravel);
 		return;
 	}

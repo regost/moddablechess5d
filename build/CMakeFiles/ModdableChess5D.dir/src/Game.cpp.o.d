@@ -180,6 +180,7 @@ CMakeFiles/ModdableChess5D.dir/src/Game.cpp.o: \
  /usr/include/c++/13/bits/basic_ios.tcc \
  /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/istream \
  /usr/include/c++/13/bits/istream.tcc \
+ /home/candy/projects/moddablechess5d/moddablechess5d/include/Enum.h \
  /home/candy/projects/moddablechess5d/moddablechess5d/include/HelperStructs.h \
  /usr/include/c++/13/list /usr/include/c++/13/bits/stl_list.h \
  /usr/include/c++/13/bits/allocated_ptr.h \
@@ -194,7 +195,6 @@ CMakeFiles/ModdableChess5D.dir/src/Game.cpp.o: \
  /usr/include/c++/13/bitset \
  /home/candy/projects/moddablechess5d/moddablechess5d/include/ScrollableGame.h \
  /home/candy/projects/moddablechess5d/moddablechess5d/include/Timeline.h \
- /home/candy/projects/moddablechess5d/moddablechess5d/include/Enum.h \
  /home/candy/projects/moddablechess5d/moddablechess5d/include/VConstructor.h \
  /home/candy/projects/moddablechess5d/moddablechess5d/include/VConstructorClasses.h \
  /home/candy/projects/moddablechess5d/moddablechess5d/include/Board.h

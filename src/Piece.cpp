@@ -3,6 +3,7 @@
 #include "Piece.h"
 #include "HelperStructs.h"
 #include "Game.h"
+#include "Enum.h"
 
 float Piece::spriteSize = 512;
 
@@ -46,7 +47,7 @@ bool Piece::CanTakeThePiece(bool color_)
 
 
 
-Piece::Piece(string FEN, string PGN, bool color_, bool isRoyal_, function<void(Game&, Move)> makeMove_)
+Piece::Piece(string FEN, string PGN, Color color_, bool isRoyal_, function<void(Game&, Move)> makeMove_)
 {
     this->FEN = FEN;
     this->PGN = PGN;

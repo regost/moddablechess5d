@@ -25,6 +25,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/ModdableChess5D.dir/src/VConstructor.cpp.o.d"
   "CMakeFiles/ModdableChess5D.dir/src/VConstructorClasses.cpp.o"
   "CMakeFiles/ModdableChess5D.dir/src/VConstructorClasses.cpp.o.d"
+  "CMakeFiles/ModdableChess5D.dir/src/VirtualMove.cpp.o"
+  "CMakeFiles/ModdableChess5D.dir/src/VirtualMove.cpp.o.d"
   "CMakeFiles/ModdableChess5D.dir/src/main.cpp.o"
   "CMakeFiles/ModdableChess5D.dir/src/main.cpp.o.d"
   "ModdableChess5D"

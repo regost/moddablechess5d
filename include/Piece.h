@@ -9,12 +9,13 @@
 #include <string>
 #include <functional>
 #include <stdint.h>
+#include "Enum.h"
 
 using namespace std;
 
 class Game;
 struct Move;
-
+class Color;
 
 class Piece
 {
@@ -28,11 +29,11 @@ public:
 	//Sprite sprite;
 
 	function<void(Game&, Move)> makeMove;
-	Piece(string FEN, string PGN, bool color_, bool isRoyal_, function<void(Game&, Move)> Movement);
+	Piece(string FEN, string PGN, Color color_, bool isRoyal_, function<void(Game&, Move)> Movement);
 	Piece(string FEN, string PGN, uint8_t bitinfo);
 	bool CanTakeThePiece(bool color);
 	uint8_t bitinfo;
-	bool color : 1;
+	Color color;
 	bool isRoyal : 1;
 };
 
