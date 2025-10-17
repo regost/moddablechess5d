@@ -210,7 +210,7 @@ void Node<T>::Save(const string& path)
 			isFirst = false;
 		}
 		else {
-			file << std::to_string(stepsback) << "\n";
+			file << ((stepsback == 0) ? "" : std::to_string(stepsback)) << "\n";
 		}
 		////////////////////////////////////
 		FunctionData<T> Element;

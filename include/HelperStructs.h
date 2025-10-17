@@ -68,7 +68,7 @@ struct Move {
 	void MakeMove(Game& chess);
 	void UndoMove(Game& chess);
 	void GetString(Game& chess, string& str);
-	void SetMoveByString(Game& chess, const string& parse,uint16_t color);
+	void SetMoveByString(Game& chess, const string& parse, uint16_t color);
 };
 
 /*

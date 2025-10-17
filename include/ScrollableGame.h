@@ -1,7 +1,7 @@
 #pragma once
 
-#ifndef _A_
-#define _A_
+#ifndef _ScrollableGame_H_
+#define _ScrollableGame_H_
 
 #include "Game.h"
 #include <stdint.h>
@@ -49,11 +49,7 @@ private:
 	static void SetIteratorEnd(vector<ActionAndString<Move>>& moveset, vector<ActionAndString<Move>>::iterator& currentMove);
 	static void SetIteratorBegin(vector<ActionAndString<Move>>& moveset, vector<ActionAndString<Move>>::iterator& currentMove);
 
-
-
 	//[1[2[3],4[5,6]],7[8,9[10]]]
-
-
 };
 
-#endif
+#endif //_ScrollableGame_H_
